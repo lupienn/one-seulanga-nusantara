@@ -1,4 +1,4 @@
-# Sistem Informasi One Seulanga Nusantara (OSN)
+# Sistem Informasi One Seulanga Nusantara
 
 Sistem informasi internal untuk manajemen arsip surat dan permohonan karyawan di perusahaan One Seulanga Nusantara.
 
@@ -43,12 +43,3 @@ npx drizzle-kit push
 cd ..
 npm run dev
 ```
-
-## Akun Default
-
-| Username   | Password     | Role     |
-|------------|-------------|----------|
-| admin      | admin123    | Admin    |
-| karyawan1  | karyawan123 | Karyawan |
-| karyawan2  | karyawan123 | Karyawan |
-| karyawan3  | karyawan123 | Karyawan |
