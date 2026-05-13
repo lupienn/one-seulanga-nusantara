@@ -18,7 +18,7 @@ export default {
       // Palet warna OSN berdasarkan identitas perusahaan
       colors: {
         osn: {
-          50:  '#e8f0ff',
+          50: '#e8f0ff',
           100: '#c7d8ff',
           200: '#a2bbff',
           300: '#6d94ff',
@@ -31,7 +31,7 @@ export default {
           950: '#001230',
         },
         seulanga: {
-          50:  '#fff5eb',
+          50: '#fff5eb',
           100: '#ffe3cc',
           200: '#ffcca3',
           300: '#ffad6e',
@@ -73,7 +73,7 @@ export default {
         'shimmer': 'shimmer 2s ease-in-out infinite',
       },
       keyframes: {
-        float: {
+        'float': {
           '0%, 100%': { transform: 'translate(0, 0)' },
           '50%': { transform: 'translate(20px, -20px)' },
         },
@@ -81,7 +81,7 @@ export default {
           '0%, 100%': { boxShadow: '0 0 40px rgba(5,68,184,0.4)' },
           '50%': { boxShadow: '0 0 60px rgba(5,68,184,0.7)' },
         },
-        shimmer: {
+        'shimmer': {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
@@ -90,9 +90,9 @@ export default {
         xs: '2px',
       },
       boxShadow: {
-        'osn': '0 8px 25px rgba(5, 68, 184, 0.35)',
-        'seulanga': '0 8px 25px rgba(242, 116, 32, 0.35)',
-        'card': '0 25px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.08)',
+        osn: '0 8px 25px rgba(5, 68, 184, 0.35)',
+        seulanga: '0 8px 25px rgba(242, 116, 32, 0.35)',
+        card: '0 25px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.08)',
       },
     },
   },

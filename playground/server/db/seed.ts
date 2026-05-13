@@ -103,8 +103,8 @@ async function seed() {
     // ===== SEED DATA ADMIN =====
     const [adminRows] = await connection.execute(
       'SELECT id FROM users WHERE username = ? LIMIT 1',
-      ['admin']
-    ) as any[]
+      ['admin'],
+    ) as mysql.RowDataPacket[][]
 
     if (adminRows.length > 0) {
       console.log('ℹ️  Admin sudah ada, melewati seed admin.')
@@ -113,7 +113,7 @@ async function seed() {
       const passwordHash = await bcrypt.hash('admin123', 12)
       await connection.execute(
         'INSERT INTO users (username, password, nama_lengkap, role) VALUES (?, ?, ?, ?)',
-        ['admin', passwordHash, 'Administrator OSN', 'admin']
+        ['admin', passwordHash, 'Administrator OSN', 'admin'],
       )
       console.log('✅ Pengguna admin berhasil dibuat.')
       console.log('   Username : admin')
@@ -131,8 +131,8 @@ async function seed() {
     for (const k of karyawanData) {
       const [existRows] = await connection.execute(
         'SELECT id FROM users WHERE username = ? LIMIT 1',
-        [k.username]
-      ) as any[]
+        [k.username],
+      ) as mysql.RowDataPacket[][]
 
       if (existRows.length > 0) {
         console.log(`ℹ️  ${k.username} sudah ada, melewati.`)
@@ -141,7 +141,7 @@ async function seed() {
         const hash = await bcrypt.hash(k.password, 12)
         await connection.execute(
           'INSERT INTO users (username, password, nama_lengkap, role) VALUES (?, ?, ?, ?)',
-          [k.username, hash, k.nama, 'karyawan']
+          [k.username, hash, k.nama, 'karyawan'],
         )
         console.log(`✅ ${k.username} berhasil dibuat. (Password: ${k.password})`)
       }

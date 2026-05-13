@@ -1,6 +1,5 @@
 <template>
   <div class="flex min-h-screen bg-[#0a1628]">
-
     <!-- SIDEBAR -->
     <aside
       class="fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-white/[0.07] bg-[#0c1528]/80 backdrop-blur-xl transition-transform duration-300"
@@ -17,10 +16,19 @@
       </div>
       <nav class="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4">
         <span class="mb-2 px-2 text-[10px] font-bold uppercase tracking-widest text-slate-600">Menu Utama</span>
-        <NuxtLink to="/dashboard" class="nav-item"><LucideLayoutDashboard :size="17" /><span>Dashboard</span></NuxtLink>
+        <NuxtLink
+          to="/dashboard"
+          class="nav-item"
+        ><LucideLayoutDashboard :size="17" /><span>Dashboard</span></NuxtLink>
         <span class="mt-4 mb-2 px-2 text-[10px] font-bold uppercase tracking-widest text-slate-600">E-Permohonan</span>
-        <NuxtLink to="/permohonan" class="nav-item"><LucideFileEdit :size="17" /><span>Buat Permohonan</span></NuxtLink>
-        <NuxtLink to="/riwayat" class="nav-item active"><LucideHistory :size="17" /><span>Riwayat Permohonan</span></NuxtLink>
+        <NuxtLink
+          to="/permohonan"
+          class="nav-item"
+        ><LucideFileEdit :size="17" /><span>Buat Permohonan</span></NuxtLink>
+        <NuxtLink
+          to="/riwayat"
+          class="nav-item active"
+        ><LucideHistory :size="17" /><span>Riwayat Permohonan</span></NuxtLink>
       </nav>
       <div class="border-t border-white/[0.07] px-3 py-4">
         <div class="flex items-center gap-2.5">
@@ -28,47 +36,87 @@
             {{ inisialNama }}
           </div>
           <div class="min-w-0 flex-1">
-            <p class="truncate text-sm font-semibold text-slate-200">{{ pengguna?.namaLengkap || pengguna?.username }}</p>
-            <p class="text-[11px] text-slate-500">Karyawan</p>
+            <p class="truncate text-sm font-semibold text-slate-200">
+              {{ pengguna?.namaLengkap || pengguna?.username }}
+            </p>
+            <p class="text-[11px] text-slate-500">
+              Karyawan
+            </p>
           </div>
-          <button class="flex shrink-0 items-center justify-center rounded-lg border border-red-500/20 p-1.5 text-red-400 transition hover:bg-red-500/10" @click="authStore.logout()" title="Keluar">
+          <button
+            class="flex shrink-0 items-center justify-center rounded-lg border border-red-500/20 p-1.5 text-red-400 transition hover:bg-red-500/10"
+            title="Keluar"
+            @click="authStore.logout()"
+          >
             <LucideLogOut :size="16" />
           </button>
         </div>
       </div>
     </aside>
 
-    <div v-if="sidebarTerbuka" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden" @click="sidebarTerbuka = false" />
+    <div
+      v-if="sidebarTerbuka"
+      class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
+      @click="sidebarTerbuka = false"
+    />
 
     <!-- MAIN -->
     <div class="flex flex-1 flex-col lg:pl-64">
       <header class="sticky top-0 z-30 flex items-center gap-3 border-b border-white/[0.07] bg-[#0a1628]/80 px-5 py-3.5 backdrop-blur-xl">
-        <button class="flex items-center justify-center rounded-lg border border-white/10 p-1.5 text-slate-400 hover:bg-white/5 lg:hidden transition" @click="sidebarTerbuka = !sidebarTerbuka" aria-label="Toggle menu">
+        <button
+          class="flex items-center justify-center rounded-lg border border-white/10 p-1.5 text-slate-400 hover:bg-white/5 lg:hidden transition"
+          aria-label="Toggle menu"
+          @click="sidebarTerbuka = !sidebarTerbuka"
+        >
           <LucideMenu :size="20" />
         </button>
         <div class="flex-1">
-          <h1 class="text-base font-bold text-slate-100">Riwayat Permohonan</h1>
-          <p class="text-xs text-slate-500">Lihat riwayat permohonan yang pernah diajukan</p>
+          <h1 class="text-base font-bold text-slate-100">
+            Riwayat Permohonan
+          </h1>
+          <p class="text-xs text-slate-500">
+            Lihat riwayat permohonan yang pernah diajukan
+          </p>
         </div>
       </header>
 
       <main class="flex flex-col gap-5 p-5">
-
         <!-- Card List -->
-        <div v-if="sedangMuat" class="flex items-center justify-center py-16">
+        <div
+          v-if="sedangMuat"
+          class="flex items-center justify-center py-16"
+        >
           <div class="text-center">
-            <LucideLoader :size="24" class="animate-spin text-osn-500 mx-auto mb-3" />
-            <p class="text-sm text-slate-500">Memuat riwayat...</p>
+            <LucideLoader
+              :size="24"
+              class="animate-spin text-osn-500 mx-auto mb-3"
+            />
+            <p class="text-sm text-slate-500">
+              Memuat riwayat...
+            </p>
           </div>
         </div>
 
-        <div v-else-if="daftarPermohonan.length === 0" class="glass-card p-10 text-center">
-          <LucideInbox :size="40" class="mx-auto mb-3 text-slate-600" />
-          <p class="text-slate-400 font-medium">Belum ada riwayat permohonan.</p>
-          <p class="text-xs text-slate-500 mt-1">Silakan buat permohonan baru melalui menu "Buat Permohonan".</p>
+        <div
+          v-else-if="daftarPermohonan.length === 0"
+          class="glass-card p-10 text-center"
+        >
+          <LucideInbox
+            :size="40"
+            class="mx-auto mb-3 text-slate-600"
+          />
+          <p class="text-slate-400 font-medium">
+            Belum ada riwayat permohonan.
+          </p>
+          <p class="text-xs text-slate-500 mt-1">
+            Silakan buat permohonan baru melalui menu "Buat Permohonan".
+          </p>
         </div>
 
-        <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div
+          v-else
+          class="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
           <div
             v-for="item in daftarPermohonan"
             :key="item.id"
@@ -79,7 +127,10 @@
                 class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide"
                 :class="badgeJenis(item.jenisOpsi)"
               >
-                <component :is="iconJenis(item.jenisOpsi)" :size="12" />
+                <component
+                  :is="iconJenis(item.jenisOpsi)"
+                  :size="12"
+                />
                 {{ item.jenisOpsi }}
               </span>
               <span class="text-[10px] text-slate-600 font-mono">#{{ item.id }}</span>
@@ -87,18 +138,30 @@
 
             <div class="grid grid-cols-2 gap-3 mb-4">
               <div>
-                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-0.5">Tanggal Mulai</p>
-                <p class="text-sm text-slate-300">{{ formatTanggal(item.tanggalMulai) }}</p>
+                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-0.5">
+                  Tanggal Mulai
+                </p>
+                <p class="text-sm text-slate-300">
+                  {{ formatTanggal(item.tanggalMulai) }}
+                </p>
               </div>
               <div>
-                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-0.5">Tanggal Selesai</p>
-                <p class="text-sm text-slate-300">{{ formatTanggal(item.tanggalSelesai) }}</p>
+                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-0.5">
+                  Tanggal Selesai
+                </p>
+                <p class="text-sm text-slate-300">
+                  {{ formatTanggal(item.tanggalSelesai) }}
+                </p>
               </div>
             </div>
 
             <div>
-              <p class="text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-0.5">Keterangan</p>
-              <p class="text-sm text-slate-400 leading-relaxed">{{ item.keterangan }}</p>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-0.5">
+                Keterangan
+              </p>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                {{ item.keterangan }}
+              </p>
             </div>
 
             <div class="mt-4 pt-3 border-t border-white/[0.07] flex items-center gap-1.5 text-[10px] text-slate-600">
@@ -118,8 +181,9 @@ const pengguna = computed(() => authStore.penggunaLogin)
 const sidebarTerbuka = ref(false)
 const inisialNama = computed(() => (pengguna.value?.namaLengkap || pengguna.value?.username || '?').slice(0, 2).toUpperCase())
 
+interface PermohonanItem { id: number, jenisOpsi: string, tanggalMulai: string, tanggalSelesai: string, keterangan: string, createdAt: string }
 const sedangMuat = ref(true)
-const daftarPermohonan = ref<any[]>([])
+const daftarPermohonan = ref<PermohonanItem[]>([])
 
 function formatTanggal(val: string) {
   return new Date(val).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })
@@ -150,7 +214,7 @@ function iconJenis(jenis: string) {
 async function fetchData() {
   sedangMuat.value = true
   try {
-    const res = await $fetch<any>('/api/permohonan', {
+    const res = await $fetch<{ data: PermohonanItem[] }>('/api/permohonan', {
       headers: { Authorization: `Bearer ${authStore.token}` },
     })
     daftarPermohonan.value = res.data

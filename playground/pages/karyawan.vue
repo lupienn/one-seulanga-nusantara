@@ -1,6 +1,5 @@
 <template>
   <div class="flex min-h-screen bg-[#0a1628]">
-
     <!-- SIDEBAR -->
     <aside
       class="fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-white/[0.07] bg-[#0c1528]/80 backdrop-blur-xl transition-transform duration-300"
@@ -17,12 +16,24 @@
       </div>
       <nav class="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4">
         <span class="mb-2 px-2 text-[10px] font-bold uppercase tracking-widest text-slate-600">Menu Utama</span>
-        <NuxtLink to="/dashboard" class="nav-item"><LucideLayoutDashboard :size="17" /><span>Dashboard</span></NuxtLink>
+        <NuxtLink
+          to="/dashboard"
+          class="nav-item"
+        ><LucideLayoutDashboard :size="17" /><span>Dashboard</span></NuxtLink>
         <span class="mt-4 mb-2 px-2 text-[10px] font-bold uppercase tracking-widest text-slate-600">Arsip Surat</span>
-        <NuxtLink to="/surat-masuk" class="nav-item"><LucideMailOpen :size="17" /><span>Surat Masuk</span></NuxtLink>
-        <NuxtLink to="/surat-keluar" class="nav-item"><LucideSend :size="17" /><span>Surat Keluar</span></NuxtLink>
+        <NuxtLink
+          to="/surat-masuk"
+          class="nav-item"
+        ><LucideMailOpen :size="17" /><span>Surat Masuk</span></NuxtLink>
+        <NuxtLink
+          to="/surat-keluar"
+          class="nav-item"
+        ><LucideSend :size="17" /><span>Surat Keluar</span></NuxtLink>
         <span class="mt-4 mb-2 px-2 text-[10px] font-bold uppercase tracking-widest text-slate-600">Manajemen</span>
-        <NuxtLink to="/karyawan" class="nav-item active"><LucideUsers :size="17" /><span>Karyawan</span></NuxtLink>
+        <NuxtLink
+          to="/karyawan"
+          class="nav-item active"
+        ><LucideUsers :size="17" /><span>Karyawan</span></NuxtLink>
       </nav>
       <div class="border-t border-white/[0.07] px-3 py-4">
         <div class="flex items-center gap-2.5">
@@ -30,27 +41,47 @@
             {{ inisialNama }}
           </div>
           <div class="min-w-0 flex-1">
-            <p class="truncate text-sm font-semibold text-slate-200">{{ pengguna?.namaLengkap || pengguna?.username }}</p>
-            <p class="text-[11px] text-slate-500">Administrator</p>
+            <p class="truncate text-sm font-semibold text-slate-200">
+              {{ pengguna?.namaLengkap || pengguna?.username }}
+            </p>
+            <p class="text-[11px] text-slate-500">
+              Administrator
+            </p>
           </div>
-          <button class="flex shrink-0 items-center justify-center rounded-lg border border-red-500/20 p-1.5 text-red-400 transition hover:bg-red-500/10" @click="authStore.logout()" title="Keluar">
+          <button
+            class="flex shrink-0 items-center justify-center rounded-lg border border-red-500/20 p-1.5 text-red-400 transition hover:bg-red-500/10"
+            title="Keluar"
+            @click="authStore.logout()"
+          >
             <LucideLogOut :size="16" />
           </button>
         </div>
       </div>
     </aside>
 
-    <div v-if="sidebarTerbuka" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden" @click="sidebarTerbuka = false" />
+    <div
+      v-if="sidebarTerbuka"
+      class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
+      @click="sidebarTerbuka = false"
+    />
 
     <!-- MAIN -->
     <div class="flex flex-1 flex-col lg:pl-64">
       <header class="sticky top-0 z-30 flex items-center gap-3 border-b border-white/[0.07] bg-[#0a1628]/80 px-5 py-3.5 backdrop-blur-xl">
-        <button class="flex items-center justify-center rounded-lg border border-white/10 p-1.5 text-slate-400 hover:bg-white/5 lg:hidden transition" @click="sidebarTerbuka = !sidebarTerbuka" aria-label="Toggle menu">
+        <button
+          class="flex items-center justify-center rounded-lg border border-white/10 p-1.5 text-slate-400 hover:bg-white/5 lg:hidden transition"
+          aria-label="Toggle menu"
+          @click="sidebarTerbuka = !sidebarTerbuka"
+        >
           <LucideMenu :size="20" />
         </button>
         <div class="flex-1">
-          <h1 class="text-base font-bold text-slate-100">Manajemen Karyawan</h1>
-          <p class="text-xs text-slate-500">Daftar karyawan terdaftar di sistem</p>
+          <h1 class="text-base font-bold text-slate-100">
+            Manajemen Karyawan
+          </h1>
+          <p class="text-xs text-slate-500">
+            Daftar karyawan terdaftar di sistem
+          </p>
         </div>
       </header>
 
@@ -58,7 +89,10 @@
         <div class="glass-card overflow-hidden">
           <div class="px-5 py-4 border-b border-white/[0.07] flex items-center justify-between">
             <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2">
-              <LucideUsers :size="16" class="text-osn-400" />
+              <LucideUsers
+                :size="16"
+                class="text-osn-400"
+              />
               Daftar Karyawan
             </h3>
             <span class="text-xs text-slate-500">{{ daftarKaryawan.length }} karyawan</span>
@@ -67,37 +101,75 @@
             <table class="w-full text-sm">
               <thead>
                 <tr class="border-b border-white/[0.07] text-left">
-                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">No</th>
-                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">Nama Lengkap</th>
-                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">Username</th>
-                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">Role</th>
-                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">Bergabung</th>
+                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                    No
+                  </th>
+                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                    Nama Lengkap
+                  </th>
+                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                    Username
+                  </th>
+                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                    Role
+                  </th>
+                  <th class="px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                    Bergabung
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-if="sedangMuat" class="border-b border-white/[0.05]">
-                  <td colspan="5" class="px-5 py-8 text-center text-slate-500">
-                    <LucideLoader :size="20" class="animate-spin mx-auto mb-2" />Memuat data...
+                <tr
+                  v-if="sedangMuat"
+                  class="border-b border-white/[0.05]"
+                >
+                  <td
+                    colspan="5"
+                    class="px-5 py-8 text-center text-slate-500"
+                  >
+                    <LucideLoader
+                      :size="20"
+                      class="animate-spin mx-auto mb-2"
+                    />Memuat data...
                   </td>
                 </tr>
-                <tr v-else-if="daftarKaryawan.length === 0" class="border-b border-white/[0.05]">
-                  <td colspan="5" class="px-5 py-8 text-center text-slate-500">Belum ada karyawan terdaftar.</td>
+                <tr
+                  v-else-if="daftarKaryawan.length === 0"
+                  class="border-b border-white/[0.05]"
+                >
+                  <td
+                    colspan="5"
+                    class="px-5 py-8 text-center text-slate-500"
+                  >
+                    Belum ada karyawan terdaftar.
+                  </td>
                 </tr>
-                <tr v-else v-for="(k, i) in daftarKaryawan" :key="k.id" class="border-b border-white/[0.05] hover:bg-white/[0.03] transition">
-                  <td class="px-5 py-3 text-slate-400">{{ i + 1 }}</td>
+                <tr
+                  v-for="(k, i) in daftarKaryawan"
+                  v-else
+                  :key="k.id"
+                  class="border-b border-white/[0.05] hover:bg-white/[0.03] transition"
+                >
+                  <td class="px-5 py-3 text-slate-400">
+                    {{ i + 1 }}
+                  </td>
                   <td class="px-5 py-3">
                     <div class="flex items-center gap-3">
                       <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-osn-500 to-osn-700 text-[10px] font-bold text-white">
-                        {{ (k.namaLengkap || k.username).slice(0,2).toUpperCase() }}
+                        {{ (k.namaLengkap || k.username).slice(0, 2).toUpperCase() }}
                       </div>
                       <span class="font-medium text-slate-200">{{ k.namaLengkap }}</span>
                     </div>
                   </td>
-                  <td class="px-5 py-3 text-slate-400 font-mono text-xs">{{ k.username }}</td>
+                  <td class="px-5 py-3 text-slate-400 font-mono text-xs">
+                    {{ k.username }}
+                  </td>
                   <td class="px-5 py-3">
                     <span class="badge badge-karyawan">Karyawan</span>
                   </td>
-                  <td class="px-5 py-3 text-slate-400">{{ formatTanggal(k.createdAt) }}</td>
+                  <td class="px-5 py-3 text-slate-400">
+                    {{ formatTanggal(k.createdAt) }}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -114,8 +186,9 @@ const pengguna = computed(() => authStore.penggunaLogin)
 const sidebarTerbuka = ref(false)
 const inisialNama = computed(() => (pengguna.value?.namaLengkap || pengguna.value?.username || '?').slice(0, 2).toUpperCase())
 
+interface KaryawanItem { id: number, namaLengkap: string, username: string, role: string, createdAt: string }
 const sedangMuat = ref(true)
-const daftarKaryawan = ref<any[]>([])
+const daftarKaryawan = ref<KaryawanItem[]>([])
 
 function formatTanggal(val: string) {
   return new Date(val).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
@@ -124,9 +197,10 @@ function formatTanggal(val: string) {
 async function fetchData() {
   sedangMuat.value = true
   try {
-    const res = await $fetch<any>('/api/karyawan', { headers: { Authorization: `Bearer ${authStore.token}` } })
+    const res = await $fetch<{ data: KaryawanItem[] }>('/api/karyawan', { headers: { Authorization: `Bearer ${authStore.token}` } })
     daftarKaryawan.value = res.data
-  } catch { /* silent */ }
+  }
+  catch { /* silent */ }
   finally { sedangMuat.value = false }
 }
 

@@ -20,10 +20,10 @@ export const useAuthStore = defineStore('auth', {
   }),
 
   getters: {
-    terautentikasi: (state) => !!state.token,
-    penggunaLogin: (state) => state.pengguna,
-    isAdmin: (state) => state.pengguna?.role === 'admin',
-    isKaryawan: (state) => state.pengguna?.role === 'karyawan',
+    terautentikasi: state => !!state.token,
+    penggunaLogin: state => state.pengguna,
+    isAdmin: state => state.pengguna?.role === 'admin',
+    isKaryawan: state => state.pengguna?.role === 'karyawan',
   },
 
   actions: {
@@ -37,7 +37,7 @@ export const useAuthStore = defineStore('auth', {
         throw new Error(error.value.data?.statusMessage || 'Login gagal.')
       }
 
-      const result = data.value as any
+      const result = data.value as { data: { token: string, pengguna: Pengguna } }
       this.token = result.data.token
       this.pengguna = result.data.pengguna
 
@@ -63,7 +63,7 @@ export const useAuthStore = defineStore('auth', {
         return
       }
 
-      const result = data.value as any
+      const result = data.value as { data: { pengguna: Pengguna } }
       this.pengguna = result.data.pengguna
     },
 
