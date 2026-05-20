@@ -19,7 +19,7 @@
     "drizzle-orm": "^0.43.1",
     "jose": "^5.10.0",
     "my-module": "latest",
-    "mysql2": "^3.14.0",
+    "mysql2": "^3.22.3",
     "nuxt": "^4.4.4",
     "nuxt-lucide-icons": "^2.1.0",
     "pinia": "^3.0.4",

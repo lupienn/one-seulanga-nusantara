@@ -13,7 +13,7 @@ export async function signJWT(payload: JWTPayload): Promise<string> {
   return await new SignJWT({ ...payload })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
-    .setExpirationTime('7d')
+    .setExpirationTime('12h')
     .sign(secret)
 }
 

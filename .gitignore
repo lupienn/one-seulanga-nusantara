@@ -26,6 +26,7 @@ dist
 
 # Env
 .env
+.env.test
 
 # Testing
 reports
@@ -56,3 +57,4 @@ Temporary Items
 .apdisk
 README copy.md
 osnlogo.jpeg
+favicon.icoo

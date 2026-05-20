@@ -107,7 +107,13 @@ async function seed() {
     ) as mysql.RowDataPacket[][]
 
     if (adminRows && adminRows.length > 0) {
-      console.log('ℹ️  Admin sudah ada, melewati seed admin.')
+      console.log('ℹ️  Admin sudah ada, melakukan update data dan password admin...')
+      const passwordHash = await bcrypt.hash('admin', 12)
+      await connection.execute(
+        'UPDATE users SET password = ?, nama_lengkap = ? WHERE username = ?',
+        [passwordHash, 'Administrator OSN', 'admin'],
+      )
+      console.log('✅ Data admin berhasil diperbarui (Password: admin).')
     }
     else {
       const passwordHash = await bcrypt.hash('admin', 12)
@@ -135,7 +141,13 @@ async function seed() {
       ) as mysql.RowDataPacket[][]
 
       if (existRows && existRows.length > 0) {
-        console.log(`ℹ️  ${k.username} sudah ada, melewati.`)
+        console.log(`ℹ️  ${k.username} sudah ada, melakukan update data dan password...`)
+        const hash = await bcrypt.hash(k.password, 12)
+        await connection.execute(
+          'UPDATE users SET password = ?, nama_lengkap = ? WHERE username = ?',
+          [hash, k.nama, k.username],
+        )
+        console.log(`✅ ${k.username} berhasil diperbarui. (Password baru: ${k.password})`)
       }
       else {
         const hash = await bcrypt.hash(k.password, 12)

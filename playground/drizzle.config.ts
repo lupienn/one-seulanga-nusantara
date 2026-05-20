@@ -9,10 +9,6 @@ export default defineConfig({
   out: './server/db/migrations',
   dialect: 'mysql',
   dbCredentials: {
-    host: process.env.NUXT_DB_HOST || '127.0.0.1',
-    port: Number(process.env.NUXT_DB_PORT) || 3306,
-    database: process.env.NUXT_DB_DATABASE || 'one_seulanga_nusantara',
-    user: process.env.NUXT_DB_USERNAME || 'root',
-    password: process.env.NUXT_DB_PASSWORD || '',
+    url: `mysql://${process.env.NUXT_DB_USERNAME || 'root'}:${process.env.NUXT_DB_PASSWORD || ''}@${process.env.NUXT_DB_HOST || '127.0.0.1'}:${process.env.NUXT_DB_PORT || 3306}/${process.env.NUXT_DB_DATABASE || 'one_seulanga_nusantara'}`,
   },
 })
