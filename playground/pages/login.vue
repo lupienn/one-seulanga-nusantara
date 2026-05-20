@@ -13,6 +13,11 @@
       <div class="absolute inset-0 bg-seulanga-500/20 blur-[120px] rounded-full mix-blend-screen" />
     </div>
 
+    <!-- Decorative Seulanga Top Right -->
+    <div class="absolute -top-12 -right-12 w-[320px] h-[320px] opacity-90 pointer-events-none select-none animate-float-slow z-0">
+      <img src="/seulanga.png" alt="Seulanga Decoration" class="w-full h-full object-contain rotate-12 drop-shadow-2xl" />
+    </div>
+
     <!-- Card Container -->
     <div class="relative z-10 w-full max-w-[420px]">
       <!-- Card -->
