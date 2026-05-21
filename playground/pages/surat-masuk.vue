@@ -119,11 +119,11 @@
           <LucideMenu :size="20" />
         </button>
 
-        <div class="flex-1">
-          <h1 class="text-lg font-bold text-white tracking-tight">
+        <div class="flex-1 min-w-0">
+          <h1 class="text-lg font-bold text-white tracking-tight truncate">
             Arsip Surat Masuk
           </h1>
-          <p class="text-xs font-medium text-slate-400 hidden sm:block">
+          <p class="text-xs font-medium text-slate-400 hidden sm:block truncate">
             Kelola dan pantau seluruh surat masuk perusahaan
           </p>
         </div>
@@ -281,10 +281,10 @@
               <thead class="bg-black/10 text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-700/50">
                 <tr>
                   <th class="px-6 py-4 w-16 text-center">No</th>
-                  <th class="px-6 py-4">No. Surat</th>
-                  <th class="px-6 py-4">Asal Surat</th>
-                  <th class="px-6 py-4">Tanggal Terima</th>
-                  <th class="px-6 py-4">Keterangan</th>
+                  <th class="px-6 py-4 whitespace-nowrap">No. Surat</th>
+                  <th class="px-6 py-4 whitespace-nowrap min-w-[200px]">Asal Surat</th>
+                  <th class="px-6 py-4 whitespace-nowrap">Tanggal Terima</th>
+                  <th class="px-6 py-4 whitespace-nowrap min-w-[250px]">Keterangan</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-700/50">
@@ -323,7 +323,7 @@
                   <td class="px-6 py-4 text-center font-semibold text-slate-500 group-hover:text-slate-300">
                     {{ i + 1 }}
                   </td>
-                  <td class="px-6 py-4 font-bold text-slate-200">
+                  <td class="px-6 py-4 font-bold text-slate-200 whitespace-nowrap">
                     {{ surat.noSurat }}
                   </td>
                   <td class="px-6 py-4 text-slate-300 font-medium">
@@ -332,7 +332,7 @@
                       {{ surat.asalSurat }}
                     </div>
                   </td>
-                  <td class="px-6 py-4 text-slate-300">
+                  <td class="px-6 py-4 text-slate-300 whitespace-nowrap">
                     <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/50 border border-slate-700/50 text-xs font-semibold">
                       <LucideCalendarDays :size="12" class="text-osn-400" />
                       {{ formatTanggal(surat.tanggalTerima) }}
