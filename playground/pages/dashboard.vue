@@ -230,7 +230,7 @@
                 :class="stat.ikonBg"
               >
                 <component
-                  :is="resolveComponent(stat.ikon)"
+                  :is="stat.ikon"
                   :size="26"
                   class="text-white drop-shadow-md"
                 />
@@ -264,7 +264,7 @@
                 :class="stat.ikonBg"
               >
                 <component
-                  :is="resolveComponent(stat.ikon)"
+                  :is="stat.ikon"
                   :size="26"
                   class="text-white drop-shadow-md"
                 />
@@ -306,7 +306,7 @@
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 bg-black/20 p-5 rounded-2xl border border-white/5">
                     <div v-for="item in infoAkun.slice(2)" :key="item.label" class="flex flex-col gap-1.5">
                       <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 flex items-center gap-1.5 justify-center sm:justify-start">
-                        <component :is="resolveComponent(item.ikon)" :size="14" class="text-slate-500" />
+                        <component :is="item.ikon" :size="14" class="text-slate-500" />
                         {{ item.label }}
                       </span>
                       <div class="mt-0.5">
@@ -483,22 +483,24 @@ const sapaanWaktu = computed(() => {
   return 'Selamat Malam'
 })
 
+import { LucideUsers, LucideMailOpen, LucideSend, LucideFileEdit, LucideUser, LucideAtSign, LucideShieldCheck, LucideCalendarClock } from '#components'
+
 const statistikAdmin = computed(() => [
-  { label: 'Total Karyawan', nilai: statsData.value?.totalKaryawan ?? '—', ikon: 'LucideUsers', ikonBg: 'bg-gradient-to-br from-osn-700 to-osn-500' },
-  { label: 'Surat Masuk', nilai: statsData.value?.totalSuratMasuk ?? '—', ikon: 'LucideMailOpen', ikonBg: 'bg-gradient-to-br from-emerald-700 to-emerald-500' },
-  { label: 'Surat Keluar', nilai: statsData.value?.totalSuratKeluar ?? '—', ikon: 'LucideSend', ikonBg: 'bg-gradient-to-br from-seulanga-500 to-seulanga-400' },
-  { label: 'Permohonan', nilai: statsData.value?.totalPermohonan ?? '—', ikon: 'LucideFileEdit', ikonBg: 'bg-gradient-to-br from-violet-700 to-violet-500' },
+  { label: 'Total Karyawan', nilai: statsData.value?.totalKaryawan ?? '—', ikon: LucideUsers, ikonBg: 'bg-gradient-to-br from-osn-700 to-osn-500' },
+  { label: 'Surat Masuk', nilai: statsData.value?.totalSuratMasuk ?? '—', ikon: LucideMailOpen, ikonBg: 'bg-gradient-to-br from-emerald-700 to-emerald-500' },
+  { label: 'Surat Keluar', nilai: statsData.value?.totalSuratKeluar ?? '—', ikon: LucideSend, ikonBg: 'bg-gradient-to-br from-seulanga-500 to-seulanga-400' },
+  { label: 'Permohonan', nilai: statsData.value?.totalPermohonan ?? '—', ikon: LucideFileEdit, ikonBg: 'bg-gradient-to-br from-violet-700 to-violet-500' },
 ])
 
 const statistikKaryawan = computed(() => [
-  { label: 'Total Permohonan Saya', nilai: statsData.value?.totalPermohonan ?? '—', ikon: 'LucideFileEdit', ikonBg: 'bg-gradient-to-br from-osn-700 to-osn-500' },
+  { label: 'Total Permohonan Saya', nilai: statsData.value?.totalPermohonan ?? '—', ikon: LucideFileEdit, ikonBg: 'bg-gradient-to-br from-osn-700 to-osn-500' },
 ])
 
 const infoAkun = computed(() => [
-  { label: 'Nama Lengkap', nilai: pengguna.value?.namaLengkap, isBadge: false, ikon: 'LucideUser' },
-  { label: 'Username', nilai: pengguna.value?.username, isBadge: false, ikon: 'LucideAtSign' },
-  { label: 'Role / Posisi', nilai: labelRole.value, isBadge: true, ikon: 'LucideShieldCheck' },
-  { label: 'Bergabung Sejak', nilai: tanggalBergabung.value, isBadge: false, ikon: 'LucideCalendarClock' },
+  { label: 'Nama Lengkap', nilai: pengguna.value?.namaLengkap, isBadge: false, ikon: LucideUser },
+  { label: 'Username', nilai: pengguna.value?.username, isBadge: false, ikon: LucideAtSign },
+  { label: 'Role / Posisi', nilai: labelRole.value, isBadge: true, ikon: LucideShieldCheck },
+  { label: 'Bergabung Sejak', nilai: tanggalBergabung.value, isBadge: false, ikon: LucideCalendarClock },
 ])
 
 async function fetchStats() {
