@@ -230,7 +230,7 @@
                 :class="stat.ikonBg"
               >
                 <component
-                  :is="stat.ikon"
+                  :is="resolveComponent(stat.ikon)"
                   :size="26"
                   class="text-white drop-shadow-md"
                 />
@@ -264,7 +264,7 @@
                 :class="stat.ikonBg"
               >
                 <component
-                  :is="stat.ikon"
+                  :is="resolveComponent(stat.ikon)"
                   :size="26"
                   class="text-white drop-shadow-md"
                 />
@@ -306,7 +306,7 @@
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 bg-black/20 p-5 rounded-2xl border border-white/5">
                     <div v-for="item in infoAkun.slice(2)" :key="item.label" class="flex flex-col gap-1.5">
                       <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 flex items-center gap-1.5 justify-center sm:justify-start">
-                        <component :is="item.ikon" :size="14" class="text-slate-500" />
+                        <component :is="resolveComponent(item.ikon)" :size="14" class="text-slate-500" />
                         {{ item.label }}
                       </span>
                       <div class="mt-0.5">
