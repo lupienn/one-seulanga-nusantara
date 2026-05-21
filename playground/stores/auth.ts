@@ -28,43 +28,39 @@ export const useAuthStore = defineStore('auth', {
 
   actions: {
     async login(username: string, password: string) {
-      const { data, error } = await useFetch('/api/auth/login', {
-        method: 'POST',
-        body: { username, password },
-      })
+      try {
+        const result = await $fetch<{ data: { token: string, pengguna: Pengguna } }>('/api/auth/login', {
+          method: 'POST',
+          body: { username, password },
+        })
 
-      if (error.value) {
-        throw new Error(error.value.data?.statusMessage || 'Login gagal.')
+        this.token = result.data.token
+        this.pengguna = result.data.pengguna
+
+        // Simpan token di cookie agar persistent
+        const tokenCookie = useCookie('auth_token', {
+          maxAge: 60 * 60 * 24 * 7, // 7 hari
+          httpOnly: false,
+          secure: false,
+          sameSite: 'lax',
+        })
+        tokenCookie.value = this.token
+      } catch (err: any) {
+        throw new Error(err.data?.statusMessage || 'Login gagal.')
       }
-
-      const result = data.value as { data: { token: string, pengguna: Pengguna } }
-      this.token = result.data.token
-      this.pengguna = result.data.pengguna
-
-      // Simpan token di cookie agar persistent
-      const tokenCookie = useCookie('auth_token', {
-        maxAge: 60 * 60 * 24 * 7, // 7 hari
-        httpOnly: false,
-        secure: false,
-        sameSite: 'lax',
-      })
-      tokenCookie.value = this.token
     },
 
     async ambilProfil() {
       if (!this.token) return
 
-      const { data, error } = await useFetch('/api/auth/me', {
-        headers: { Authorization: `Bearer ${this.token}` },
-      })
-
-      if (error.value) {
+      try {
+        const result = await $fetch<{ data: { pengguna: Pengguna } }>('/api/auth/me', {
+          headers: { Authorization: `Bearer ${this.token}` },
+        })
+        this.pengguna = result.data.pengguna
+      } catch {
         this.logout()
-        return
       }
-
-      const result = data.value as { data: { pengguna: Pengguna } }
-      this.pengguna = result.data.pengguna
     },
 
     inisialisasiDariCookie() {
