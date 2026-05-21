@@ -187,11 +187,8 @@
                 <span>{{ sapaanWaktu }}</span>
               </div>
               <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow-sm">
-                {{ pengguna?.namaLengkap || pengguna?.username || '...' }} <span class="inline-block animate-bounce origin-bottom-right">👋</span>
+                {{ pengguna?.namaLengkap || pengguna?.username || '...' }}
               </h2>
-              <p class="mt-3 max-w-xl text-sm lg:text-base leading-relaxed text-osn-100/90 font-medium">
-                Selamat datang kembali di Sistem Informasi One Seulanga Nusantara. Kami siap membantu Anda mengelola aktivitas perusahaan dengan efisien hari ini.
-              </p>
             </div>
             
             <!-- Quick Status -->
