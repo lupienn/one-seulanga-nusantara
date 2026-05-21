@@ -531,7 +531,7 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'Dashboard — One Seulanga Nusantara',
+  title: 'One Seulanga Nusantara',
   description: 'Dashboard Sistem Informasi One Seulanga Nusantara.',
 })
 </script>
