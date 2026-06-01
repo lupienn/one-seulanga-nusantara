@@ -121,15 +121,15 @@
       </header>
 
       <!-- Konten Halaman -->
-      <main class="flex flex-col gap-6 p-6 max-w-3xl w-full mx-auto">
+      <main class="flex flex-col gap-6 p-6 max-w-[1600px] w-full mx-auto">
         <!-- Form Permohonan -->
         <div class="relative overflow-hidden bg-[#0d1c33]/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 lg:p-8 shadow-lg group">
           <!-- Background abstract glow -->
-          <div class="absolute top-0 right-0 p-32 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-700" />
+          <div class="absolute top-0 right-0 p-32 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-emerald-500/10 transition-colors duration-700" />
           
           <div class="relative z-10">
             <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-3">
-              <div class="p-2 rounded-xl bg-blue-500/20 text-blue-400 shadow-inner">
+              <div class="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 shadow-inner">
                 <LucideFileEdit :size="18" />
               </div>
               Formulir E-Permohonan
@@ -149,7 +149,7 @@
                     type="button"
                     class="px-5 py-3 rounded-xl text-sm font-semibold transition-all border shadow-sm flex items-center gap-2"
                     :class="form.jenisOpsi === opsi.value
-                      ? 'bg-blue-600 border-blue-500 text-white shadow-blue-500/25'
+                      ? 'bg-emerald-600 border-emerald-500 text-white shadow-emerald-500/25'
                       : 'bg-[#050a14]/50 border-slate-700/60 text-slate-400 hover:bg-[#070f1e] hover:border-slate-600'"
                     @click="form.jenisOpsi = opsi.value"
                   >
@@ -179,7 +179,7 @@
                     <input
                       v-model="form.tanggalMulai"
                       type="date"
-                      class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl transition-all outline-none [color-scheme:dark]"
+                      class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none [color-scheme:dark]"
                       @change="cekRentang"
                     >
                   </div>
@@ -200,7 +200,7 @@
                     <input
                       v-model="form.tanggalSelesai"
                       type="date"
-                      class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl transition-all outline-none [color-scheme:dark]"
+                      class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none [color-scheme:dark]"
                       @change="cekRentang"
                     >
                   </div>
@@ -225,9 +225,9 @@
                   class="flex items-center gap-3 text-sm rounded-xl px-4 py-3 border shadow-inner font-medium"
                   :class="rentangHari > 3
                     ? 'border-red-500/30 bg-red-500/10 text-red-300'
-                    : 'border-blue-500/30 bg-blue-500/10 text-blue-300'"
+                    : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300'"
                 >
-                  <div class="p-1 rounded-full" :class="rentangHari > 3 ? 'bg-red-500/20 text-red-400' : 'bg-blue-500/20 text-blue-400'">
+                  <div class="p-1 rounded-full" :class="rentangHari > 3 ? 'bg-red-500/20 text-red-400' : 'bg-emerald-500/20 text-emerald-400'">
                     <LucideCalendarDays :size="16" />
                   </div>
                   <span>
@@ -242,7 +242,7 @@
                 <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Keterangan <span class="text-red-400">*</span></label>
                 <textarea
                   v-model="form.keterangan"
-                  class="w-full p-4 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl transition-all outline-none min-h-[120px] resize-y"
+                  class="w-full p-4 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none min-h-[120px] resize-y"
                   placeholder="Jelaskan alasan permohonan Anda..."
                   @input="errorKeterangan = ''"
                 />
@@ -258,7 +258,7 @@
               <div class="flex justify-end mt-2">
                 <button
                   type="submit"
-                  class="relative overflow-hidden w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  class="relative overflow-hidden w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   :disabled="sedangSimpan"
                 >
                   <LucideLoader v-if="sedangSimpan" :size="18" class="animate-spin" />
