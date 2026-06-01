@@ -283,6 +283,7 @@
                   <th class="px-6 py-4 whitespace-nowrap min-w-[200px]">Tujuan Surat</th>
                   <th class="px-6 py-4 whitespace-nowrap">Tanggal Kirim</th>
                   <th class="px-6 py-4 whitespace-nowrap min-w-[250px]">Keterangan</th>
+                  <th class="px-6 py-4 text-center whitespace-nowrap">Aksi</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-700/50">
@@ -290,7 +291,7 @@
                   v-if="sedangMuat"
                 >
                   <td
-                    colspan="5"
+                    colspan="6"
                     class="px-6 py-16 text-center text-slate-400"
                   >
                     <div class="flex flex-col items-center justify-center gap-3">
@@ -303,7 +304,7 @@
                   v-else-if="daftarSurat.length === 0"
                 >
                   <td
-                    colspan="5"
+                    colspan="6"
                     class="px-6 py-16 text-center text-slate-400"
                   >
                     <div class="flex flex-col items-center justify-center gap-3 opacity-60">
@@ -339,6 +340,16 @@
                   <td class="px-6 py-4 text-slate-400 text-sm">
                     {{ surat.keterangan || '—' }}
                   </td>
+                  <td class="px-6 py-4 text-center whitespace-nowrap">
+                    <button
+                      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 transition-colors text-xs font-bold"
+                      title="Hapus Surat"
+                      @click="hapusSurat(surat)"
+                    >
+                      <LucideTrash2 :size="14" />
+                      Hapus
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -351,6 +362,7 @@
 
 
 <script setup lang="ts">
+import Swal from 'sweetalert2'
 const authStore = useAuthStore()
 const pengguna = computed(() => authStore.penggunaLogin)
 const sidebarTerbuka = ref(false)
@@ -407,6 +419,50 @@ async function tambahSuratKeluar() {
   }
   finally {
     sedangSimpan.value = false
+  }
+}
+
+async function hapusSurat(surat: SuratKeluarItem) {
+  const konfirmasi = await Swal.fire({
+    title: 'Hapus Surat Keluar?',
+    html: `Anda yakin ingin menghapus surat <b class="text-white">${surat.noSurat}</b>?<br>Tindakan ini tidak dapat dibatalkan.`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Ya, Hapus',
+    cancelButtonText: 'Batal',
+    background: '#0d1c33',
+    color: '#fff',
+    confirmButtonColor: '#ef4444',
+  })
+
+  if (!konfirmasi.isConfirmed) return
+
+  try {
+    await $fetch('/api/surat/keluar', {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${authStore.token}` },
+      body: { id: surat.id },
+    })
+
+    Swal.fire({
+      title: 'Berhasil!',
+      text: 'Surat keluar telah dihapus.',
+      icon: 'success',
+      background: '#0d1c33',
+      color: '#fff',
+      timer: 2000,
+      showConfirmButton: false,
+    })
+
+    await fetchData()
+  } catch {
+    Swal.fire({
+      title: 'Gagal!',
+      text: 'Terjadi kesalahan saat menghapus surat.',
+      icon: 'error',
+      background: '#0d1c33',
+      color: '#fff',
+    })
   }
 }
 
