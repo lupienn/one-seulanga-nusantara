@@ -166,8 +166,7 @@
             <table class="w-full text-sm text-left">
               <thead class="bg-black/10 text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-700/50">
                 <tr>
-                  <th class="px-6 py-4 w-16 text-center">No</th>
-                  <th class="px-6 py-4 whitespace-nowrap">ID</th>
+                  <th class="px-6 py-4 w-20 text-center">No. ID</th>
                   <th class="px-6 py-4 whitespace-nowrap">Jenis</th>
                   <th class="px-6 py-4 whitespace-nowrap">Tanggal Mulai</th>
                   <th class="px-6 py-4 whitespace-nowrap">Tanggal Selesai</th>
@@ -181,11 +180,8 @@
                   :key="item.id"
                   class="hover:bg-white/5 transition-colors duration-200 group"
                 >
-                  <td class="px-6 py-4 text-center font-semibold text-slate-500 group-hover:text-slate-300">
-                    {{ i + 1 }}
-                  </td>
-                  <td class="px-6 py-4 font-bold text-slate-200 whitespace-nowrap">
-                    #{{ item.id }}
+                  <td class="px-6 py-4 text-center font-bold text-slate-200 whitespace-nowrap group-hover:text-slate-300">
+                    {{ String(i + 1).padStart(2, '0') }}
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <span
