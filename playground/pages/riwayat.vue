@@ -26,7 +26,8 @@
           class="nav-item"
         ><LucideFileEdit :size="17" /><span>Buat Permohonan</span></NuxtLink>
         <NuxtLink
-          to="/riwayat"
+          to="/
+          t"
           class="nav-item active"
         ><LucideHistory :size="17" /><span>Riwayat Permohonan</span></NuxtLink>
       </nav>
