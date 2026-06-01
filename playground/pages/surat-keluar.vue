@@ -72,6 +72,16 @@
             <LucideUsers :size="18" :class="$route.path === '/karyawan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
             <span>Karyawan</span>
           </NuxtLink>
+
+          <NuxtLink
+            to="/kelola-permohonan"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
+            :class="$route.path === '/kelola-permohonan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
+          >
+            <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/kelola-permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
+            <LucideFileSignature :size="18" :class="$route.path === '/kelola-permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+            <span>Permohonan</span>
+          </NuxtLink>
         </template>
       </nav>
 

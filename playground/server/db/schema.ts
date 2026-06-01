@@ -50,6 +50,7 @@ export const permohonanKaryawan = mysqlTable('permohonan_karyawan', {
   tanggalMulai: date('tanggal_mulai').notNull(),
   tanggalSelesai: date('tanggal_selesai').notNull(),
   keterangan: text('keterangan').notNull(),
+  status: mysqlEnum('status', ['pending', 'disetujui', 'ditolak']).notNull().default('pending'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
 })

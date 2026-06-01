@@ -170,6 +170,7 @@
                   <th class="px-6 py-4 whitespace-nowrap">Jenis</th>
                   <th class="px-6 py-4 whitespace-nowrap">Tanggal Mulai</th>
                   <th class="px-6 py-4 whitespace-nowrap">Tanggal Selesai</th>
+                  <th class="px-6 py-4 whitespace-nowrap">Status</th>
                   <th class="px-6 py-4 whitespace-nowrap">Diajukan</th>
                   <th class="px-6 py-4 text-center whitespace-nowrap">Aksi</th>
                 </tr>
@@ -203,6 +204,14 @@
                       <LucideCalendarDays :size="12" class="text-osn-400" />
                       {{ formatTanggal(item.tanggalSelesai) }}
                     </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest border"
+                      :class="badgeStatus(item.status)"
+                    >
+                      {{ item.status }}
+                    </span>
                   </td>
                   <td class="px-6 py-4 text-slate-400 text-xs font-medium whitespace-nowrap">
                     {{ formatTanggalLengkap(item.createdAt) }}
@@ -295,6 +304,16 @@
                   {{ permohonanTerpilih.keterangan || 'Tidak ada keterangan.' }}
                 </div>
               </div>
+
+              <div class="flex items-center justify-between p-4 bg-black/20 rounded-2xl border border-slate-700/30">
+                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Status Saat Ini</p>
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest border"
+                  :class="badgeStatus(permohonanTerpilih.status)"
+                >
+                  {{ permohonanTerpilih.status }}
+                </span>
+              </div>
             </div>
             
             <!-- Footer -->
@@ -320,7 +339,7 @@ const pengguna = computed(() => authStore.penggunaLogin)
 const sidebarTerbuka = ref(false)
 const inisialNama = computed(() => (pengguna.value?.namaLengkap || pengguna.value?.username || '?').slice(0, 2).toUpperCase())
 
-interface PermohonanItem { id: number, jenisOpsi: string, tanggalMulai: string, tanggalSelesai: string, keterangan: string, createdAt: string }
+interface PermohonanItem { id: number, jenisOpsi: string, tanggalMulai: string, tanggalSelesai: string, keterangan: string, status: string, createdAt: string }
 const sedangMuat = ref(true)
 const daftarPermohonan = ref<PermohonanItem[]>([])
 const permohonanTerpilih = ref<PermohonanItem | null>(null)
@@ -357,6 +376,15 @@ function iconJenis(jenis: string) {
     cuti: 'LucidePalmtree',
   }
   return map[jenis] || 'LucideFile'
+}
+
+function badgeStatus(status: string) {
+  const map: Record<string, string> = {
+    pending: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+    disetujui: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+    ditolak: 'bg-red-500/20 text-red-300 border-red-500/30',
+  }
+  return map[status] || 'bg-slate-500/20 text-slate-400 border-slate-500/30'
 }
 
 async function fetchData() {
