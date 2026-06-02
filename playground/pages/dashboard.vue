@@ -1,10 +1,17 @@
 <template>
   <div class="flex min-h-screen bg-gradient-to-br from-[#040812] via-[#0a1628] to-[#050b14] selection:bg-osn-500/30 font-sans">
-    
     <!-- Background Batik (Subtle Watermark Global) -->
     <div class="fixed inset-0 z-0 pointer-events-none select-none overflow-hidden">
-      <img src="/batik.png" alt="Batik" class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12" />
-      <img src="/batik.png" alt="Batik" class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12" />
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12"
+      >
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12"
+      >
     </div>
 
     <!-- ============ SIDEBAR ============ -->
@@ -32,8 +39,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/dashboard' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideLayoutDashboard :size="18" :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideLayoutDashboard
+            :size="18"
+            :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Dashboard</span>
         </NuxtLink>
 
@@ -46,8 +59,14 @@
             class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
             :class="$route.path === '/surat-masuk' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
           >
-            <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/surat-masuk' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-            <LucideMailOpen :size="18" :class="$route.path === '/surat-masuk' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+            <div
+              class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+              :class="$route.path === '/surat-masuk' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+            />
+            <LucideMailOpen
+              :size="18"
+              :class="$route.path === '/surat-masuk' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+            />
             <span>Surat Masuk</span>
           </NuxtLink>
 
@@ -56,8 +75,14 @@
             class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
             :class="$route.path === '/surat-keluar' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
           >
-            <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/surat-keluar' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-            <LucideSend :size="18" :class="$route.path === '/surat-keluar' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+            <div
+              class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+              :class="$route.path === '/surat-keluar' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+            />
+            <LucideSend
+              :size="18"
+              :class="$route.path === '/surat-keluar' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+            />
             <span>Surat Keluar</span>
           </NuxtLink>
 
@@ -68,8 +93,14 @@
             class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
             :class="$route.path === '/karyawan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
           >
-            <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/karyawan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-            <LucideUsers :size="18" :class="$route.path === '/karyawan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+            <div
+              class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+              :class="$route.path === '/karyawan' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+            />
+            <LucideUsers
+              :size="18"
+              :class="$route.path === '/karyawan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+            />
             <span>Karyawan</span>
           </NuxtLink>
 
@@ -78,8 +109,14 @@
             class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
             :class="$route.path === '/kelola-permohonan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
           >
-            <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/kelola-permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-            <LucideFileSignature :size="18" :class="$route.path === '/kelola-permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+            <div
+              class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+              :class="$route.path === '/kelola-permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+            />
+            <LucideFileSignature
+              :size="18"
+              :class="$route.path === '/kelola-permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+            />
             <span>Permohonan</span>
           </NuxtLink>
         </template>
@@ -93,8 +130,14 @@
             class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
             :class="$route.path === '/permohonan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
           >
-            <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-            <LucideFileEdit :size="18" :class="$route.path === '/permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+            <div
+              class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+              :class="$route.path === '/permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+            />
+            <LucideFileEdit
+              :size="18"
+              :class="$route.path === '/permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+            />
             <span>Buat Permohonan</span>
           </NuxtLink>
 
@@ -103,8 +146,14 @@
             class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
             :class="$route.path === '/riwayat' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
           >
-            <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/riwayat' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-            <LucideHistory :size="18" :class="$route.path === '/riwayat' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+            <div
+              class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+              :class="$route.path === '/riwayat' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+            />
+            <LucideHistory
+              :size="18"
+              :class="$route.path === '/riwayat' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+            />
             <span>Riwayat Permohonan</span>
           </NuxtLink>
         </template>
@@ -131,7 +180,10 @@
             title="Keluar"
             @click="modalLogout = true"
           >
-            <LucideLogOut :size="18" class="group-hover:-translate-x-0.5 transition-transform" />
+            <LucideLogOut
+              :size="18"
+              class="group-hover:-translate-x-0.5 transition-transform"
+            />
           </button>
         </div>
       </div>
@@ -167,7 +219,10 @@
 
         <div class="flex items-center gap-3">
           <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700/50">
-            <LucideCalendar :size="14" class="text-osn-400" />
+            <LucideCalendar
+              :size="14"
+              class="text-osn-400"
+            />
             <span class="text-xs font-semibold text-slate-300">{{ tanggalSekarang }}</span>
           </div>
         </div>
@@ -179,13 +234,21 @@
         <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-osn-800 via-osn-600 to-osn-900 p-8 lg:p-10 shadow-xl shadow-osn-900/20 group">
           <!-- Decorative Background Patterns -->
           <div class="absolute inset-0 opacity-[0.15] mix-blend-overlay pointer-events-none transition-transform duration-700 group-hover:scale-105">
-            <img src="/batik.png" alt="Pattern" class="w-full h-full object-cover invert" />
+            <img
+              src="/batik.png"
+              alt="Pattern"
+              class="w-full h-full object-cover invert"
+            >
           </div>
-          
+
           <div class="absolute -right-20 -top-20 w-80 h-80 opacity-20 pointer-events-none transition-transform duration-700 group-hover:rotate-12 group-hover:scale-110 drop-shadow-2xl">
-            <img src="/seulanga.png" alt="Seulanga" class="w-full h-full object-contain" />
+            <img
+              src="/seulanga.png"
+              alt="Seulanga"
+              class="w-full h-full object-contain"
+            >
           </div>
-          
+
           <!-- Subtle glow orbs -->
           <div class="absolute -bottom-20 right-10 w-48 h-48 bg-white/20 blur-[60px] rounded-full pointer-events-none" />
           <div class="absolute top-10 left-1/4 w-64 h-64 bg-osn-400/30 blur-[80px] rounded-full pointer-events-none" />
@@ -193,24 +256,29 @@
           <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-4 text-[11px] font-bold tracking-widest text-white uppercase shadow-sm">
-                <LucideSparkles :size="14" class="text-amber-300" />
+                <LucideSparkles
+                  :size="14"
+                  class="text-amber-300"
+                />
                 <span>{{ sapaanWaktu }}</span>
               </div>
               <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow-sm">
                 {{ pengguna?.namaLengkap || pengguna?.username || '...' }}
               </h2>
             </div>
-            
+
             <!-- Quick Status -->
             <div class="hidden md:flex flex-col items-end text-right">
-               <div class="text-[10px] font-bold uppercase tracking-widest text-osn-200/70 mb-2">Status Sistem</div>
-               <div class="flex items-center gap-2.5 text-sm font-bold text-white bg-black/20 px-4 py-2.5 rounded-xl backdrop-blur-md border border-white/10 shadow-inner">
-                 <span class="relative flex h-2.5 w-2.5">
-                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                   <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                 </span>
-                 Sistem Online
-               </div>
+              <div class="text-[10px] font-bold uppercase tracking-widest text-osn-200/70 mb-2">
+                Status Sistem
+              </div>
+              <div class="flex items-center gap-2.5 text-sm font-bold text-white bg-black/20 px-4 py-2.5 rounded-xl backdrop-blur-md border border-white/10 shadow-inner">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+                </span>
+                Sistem Online
+              </div>
             </div>
           </div>
         </div>
@@ -239,10 +307,26 @@
                 class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl shadow-inner transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 ring-1 ring-white/10"
                 :class="stat.ikonBg"
               >
-                <LucideUsers v-if="stat.ikon === 'LucideUsers'" :size="26" class="text-white drop-shadow-md" />
-                <LucideMailOpen v-else-if="stat.ikon === 'LucideMailOpen'" :size="26" class="text-white drop-shadow-md" />
-                <LucideSend v-else-if="stat.ikon === 'LucideSend'" :size="26" class="text-white drop-shadow-md" />
-                <LucideFileEdit v-else-if="stat.ikon === 'LucideFileEdit'" :size="26" class="text-white drop-shadow-md" />
+                <LucideUsers
+                  v-if="stat.ikon === 'LucideUsers'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
+                <LucideMailOpen
+                  v-else-if="stat.ikon === 'LucideMailOpen'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
+                <LucideSend
+                  v-else-if="stat.ikon === 'LucideSend'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
+                <LucideFileEdit
+                  v-else-if="stat.ikon === 'LucideFileEdit'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
               </div>
             </div>
           </div>
@@ -272,10 +356,26 @@
                 class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl shadow-inner transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 ring-1 ring-white/10"
                 :class="stat.ikonBg"
               >
-                <LucideUsers v-if="stat.ikon === 'LucideUsers'" :size="26" class="text-white drop-shadow-md" />
-                <LucideMailOpen v-else-if="stat.ikon === 'LucideMailOpen'" :size="26" class="text-white drop-shadow-md" />
-                <LucideSend v-else-if="stat.ikon === 'LucideSend'" :size="26" class="text-white drop-shadow-md" />
-                <LucideFileEdit v-else-if="stat.ikon === 'LucideFileEdit'" :size="26" class="text-white drop-shadow-md" />
+                <LucideUsers
+                  v-if="stat.ikon === 'LucideUsers'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
+                <LucideMailOpen
+                  v-else-if="stat.ikon === 'LucideMailOpen'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
+                <LucideSend
+                  v-else-if="stat.ikon === 'LucideSend'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
+                <LucideFileEdit
+                  v-else-if="stat.ikon === 'LucideFileEdit'"
+                  :size="26"
+                  class="text-white drop-shadow-md"
+                />
               </div>
             </div>
           </div>
@@ -283,18 +383,22 @@
 
         <!-- Profil & Info Akun -->
         <div class="mt-2 grid grid-cols-1 xl:grid-cols-3 gap-6">
-          
           <!-- Kolom Info Akun Utama -->
           <div class="xl:col-span-2 flex flex-col">
             <div class="flex items-center gap-2.5 mb-4 px-1">
-               <LucideUserCircle class="text-osn-400" :size="20" />
-               <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300">Profil Saya</h3>
+              <LucideUserCircle
+                class="text-osn-400"
+                :size="20"
+              />
+              <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300">
+                Profil Saya
+              </h3>
             </div>
-            
+
             <div class="relative flex-1 bg-[#0d1c33]/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 lg:p-8 shadow-lg overflow-hidden group">
               <!-- Background abstract -->
               <div class="absolute top-0 right-0 p-32 bg-osn-500/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-osn-500/10 transition-colors duration-700" />
-              
+
               <div class="relative flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-8">
                 <!-- Avatar Besar -->
                 <div class="relative shrink-0">
@@ -302,29 +406,63 @@
                     {{ inisialNama }}
                   </div>
                   <div class="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 bg-[#0a1628] rounded-full p-1.5">
-                    <div class="bg-emerald-500 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full ring-2 ring-[#0a1628]" title="Online" />
+                    <div
+                      class="bg-emerald-500 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full ring-2 ring-[#0a1628]"
+                      title="Online"
+                    />
                   </div>
                 </div>
-                
+
                 <!-- Detail Info -->
                 <div class="flex-1 w-full text-center sm:text-left flex flex-col justify-center">
-                  <h4 class="text-2xl sm:text-3xl font-extrabold text-white mb-1 tracking-tight">{{ pengguna?.namaLengkap || pengguna?.username || 'Pengguna' }}</h4>
-                  <p class="text-sm text-osn-400 mb-6 font-semibold tracking-wide">@{{ pengguna?.username }}</p>
-                  
+                  <h4 class="text-2xl sm:text-3xl font-extrabold text-white mb-1 tracking-tight">
+                    {{ pengguna?.namaLengkap || pengguna?.username || 'Pengguna' }}
+                  </h4>
+                  <p class="text-sm text-osn-400 mb-6 font-semibold tracking-wide">
+                    @{{ pengguna?.username }}
+                  </p>
+
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 bg-black/20 p-5 rounded-2xl border border-white/5">
-                    <div v-for="item in infoAkun.slice(2)" :key="item.label" class="flex flex-col gap-1.5">
+                    <div
+                      v-for="item in infoAkun.slice(2)"
+                      :key="item.label"
+                      class="flex flex-col gap-1.5"
+                    >
                       <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 flex items-center gap-1.5 justify-center sm:justify-start">
-                        <LucideUser v-if="item.ikon === 'LucideUser'" :size="14" class="text-slate-500" />
-                        <LucideAtSign v-else-if="item.ikon === 'LucideAtSign'" :size="14" class="text-slate-500" />
-                        <LucideShieldCheck v-else-if="item.ikon === 'LucideShieldCheck'" :size="14" class="text-slate-500" />
-                        <LucideCalendarClock v-else-if="item.ikon === 'LucideCalendarClock'" :size="14" class="text-slate-500" />
+                        <LucideUser
+                          v-if="item.ikon === 'LucideUser'"
+                          :size="14"
+                          class="text-slate-500"
+                        />
+                        <LucideAtSign
+                          v-else-if="item.ikon === 'LucideAtSign'"
+                          :size="14"
+                          class="text-slate-500"
+                        />
+                        <LucideShieldCheck
+                          v-else-if="item.ikon === 'LucideShieldCheck'"
+                          :size="14"
+                          class="text-slate-500"
+                        />
+                        <LucideCalendarClock
+                          v-else-if="item.ikon === 'LucideCalendarClock'"
+                          :size="14"
+                          class="text-slate-500"
+                        />
                         {{ item.label }}
                       </span>
                       <div class="mt-0.5">
-                        <span v-if="item.isBadge" class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider border shadow-sm" :class="pengguna?.role === 'admin' ? 'bg-osn-500/10 text-osn-300 border-osn-500/30' : 'bg-seulanga-500/10 text-seulanga-300 border-seulanga-500/30'">
+                        <span
+                          v-if="item.isBadge"
+                          class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider border shadow-sm"
+                          :class="pengguna?.role === 'admin' ? 'bg-osn-500/10 text-osn-300 border-osn-500/30' : 'bg-seulanga-500/10 text-seulanga-300 border-seulanga-500/30'"
+                        >
                           {{ item.nilai }}
                         </span>
-                        <span v-else class="text-sm font-bold text-slate-200">
+                        <span
+                          v-else
+                          class="text-sm font-bold text-slate-200"
+                        >
                           {{ item.nilai || '—' }}
                         </span>
                       </div>
@@ -334,17 +472,25 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Kolom Tambahan / Quick Links -->
           <div class="flex flex-col">
             <div class="flex items-center gap-2.5 mb-4 px-1">
-               <LucideZap class="text-amber-400" :size="20" />
-               <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300">Aksi Cepat</h3>
+              <LucideZap
+                class="text-amber-400"
+                :size="20"
+              />
+              <h3 class="text-xs font-bold uppercase tracking-widest text-slate-300">
+                Aksi Cepat
+              </h3>
             </div>
-            
+
             <div class="flex-1 bg-gradient-to-b from-[#0d1c33]/60 to-[#070f1e]/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 shadow-lg flex flex-col gap-4">
               <template v-if="pengguna?.role === 'admin'">
-                <NuxtLink to="/surat-masuk" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-osn-500/30 hover:shadow-lg transition-all group">
+                <NuxtLink
+                  to="/surat-masuk"
+                  class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-osn-500/30 hover:shadow-lg transition-all group"
+                >
                   <div class="p-3 rounded-xl bg-osn-500/20 text-osn-400 group-hover:scale-110 group-hover:bg-osn-500 group-hover:text-white transition-all shadow-inner">
                     <LucideMailOpen :size="22" />
                   </div>
@@ -352,9 +498,15 @@
                     <p class="text-sm font-bold text-white group-hover:text-osn-200 transition-colors">Arsip Surat Masuk</p>
                     <p class="text-xs text-slate-400 mt-0.5 font-medium">Cek & kelola surat terbaru</p>
                   </div>
-                  <LucideChevronRight :size="18" class="ml-auto text-slate-500 group-hover:text-osn-400 group-hover:translate-x-1 transition-all" />
+                  <LucideChevronRight
+                    :size="18"
+                    class="ml-auto text-slate-500 group-hover:text-osn-400 group-hover:translate-x-1 transition-all"
+                  />
                 </NuxtLink>
-                <NuxtLink to="/karyawan" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-seulanga-500/30 hover:shadow-lg transition-all group">
+                <NuxtLink
+                  to="/karyawan"
+                  class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-seulanga-500/30 hover:shadow-lg transition-all group"
+                >
                   <div class="p-3 rounded-xl bg-seulanga-500/20 text-seulanga-400 group-hover:scale-110 group-hover:bg-seulanga-500 group-hover:text-white transition-all shadow-inner">
                     <LucideUsers :size="22" />
                   </div>
@@ -362,12 +514,18 @@
                     <p class="text-sm font-bold text-white group-hover:text-seulanga-200 transition-colors">Manajemen Karyawan</p>
                     <p class="text-xs text-slate-400 mt-0.5 font-medium">Kelola data pegawai OSN</p>
                   </div>
-                  <LucideChevronRight :size="18" class="ml-auto text-slate-500 group-hover:text-seulanga-400 group-hover:translate-x-1 transition-all" />
+                  <LucideChevronRight
+                    :size="18"
+                    class="ml-auto text-slate-500 group-hover:text-seulanga-400 group-hover:translate-x-1 transition-all"
+                  />
                 </NuxtLink>
               </template>
-              
+
               <template v-if="pengguna?.role === 'karyawan'">
-                <NuxtLink to="/permohonan" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-osn-500/30 hover:shadow-lg transition-all group">
+                <NuxtLink
+                  to="/permohonan"
+                  class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-osn-500/30 hover:shadow-lg transition-all group"
+                >
                   <div class="p-3 rounded-xl bg-osn-500/20 text-osn-400 group-hover:scale-110 group-hover:bg-osn-500 group-hover:text-white transition-all shadow-inner">
                     <LucideFilePlus :size="22" />
                   </div>
@@ -375,9 +533,15 @@
                     <p class="text-sm font-bold text-white group-hover:text-osn-200 transition-colors">Buat Permohonan Baru</p>
                     <p class="text-xs text-slate-400 mt-0.5 font-medium">Ajukan permintaan cuti dll</p>
                   </div>
-                  <LucideChevronRight :size="18" class="ml-auto text-slate-500 group-hover:text-osn-400 group-hover:translate-x-1 transition-all" />
+                  <LucideChevronRight
+                    :size="18"
+                    class="ml-auto text-slate-500 group-hover:text-osn-400 group-hover:translate-x-1 transition-all"
+                  />
                 </NuxtLink>
-                <NuxtLink to="/riwayat" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-seulanga-500/30 hover:shadow-lg transition-all group">
+                <NuxtLink
+                  to="/riwayat"
+                  class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-seulanga-500/30 hover:shadow-lg transition-all group"
+                >
                   <div class="p-3 rounded-xl bg-seulanga-500/20 text-seulanga-400 group-hover:scale-110 group-hover:bg-seulanga-500 group-hover:text-white transition-all shadow-inner">
                     <LucideHistory :size="22" />
                   </div>
@@ -385,10 +549,13 @@
                     <p class="text-sm font-bold text-white group-hover:text-seulanga-200 transition-colors">Cek Riwayat Saya</p>
                     <p class="text-xs text-slate-400 mt-0.5 font-medium">Pantau status pengajuan</p>
                   </div>
-                  <LucideChevronRight :size="18" class="ml-auto text-slate-500 group-hover:text-seulanga-400 group-hover:translate-x-1 transition-all" />
+                  <LucideChevronRight
+                    :size="18"
+                    class="ml-auto text-slate-500 group-hover:text-seulanga-400 group-hover:translate-x-1 transition-all"
+                  />
                 </NuxtLink>
               </template>
-              
+
               <!-- Placeholder for layout balance -->
               <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-center">
                 <span class="text-[10px] uppercase tracking-widest font-bold text-slate-600">Quick Menu v1.0</span>
@@ -413,9 +580,12 @@
       >
         <div class="relative bg-[#0d1c33] border border-slate-700/50 w-full max-w-md rounded-3xl p-8 text-center shadow-2xl transform transition-all scale-100 overflow-hidden">
           <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-400" />
-          
+
           <div class="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full border-4 border-red-500/20 bg-red-500/10 text-red-500 shadow-inner">
-            <LucideLogOut :size="32" class="animate-pulse" />
+            <LucideLogOut
+              :size="32"
+              class="animate-pulse"
+            />
           </div>
           <h3 class="text-xl font-extrabold text-white tracking-tight">
             Konfirmasi Keluar

@@ -1,10 +1,17 @@
 <template>
   <div class="flex min-h-screen bg-gradient-to-br from-[#040812] via-[#0a1628] to-[#050b14] selection:bg-osn-500/30 font-sans">
-    
     <!-- Background Batik (Subtle Watermark Global) -->
     <div class="fixed inset-0 z-0 pointer-events-none select-none overflow-hidden">
-      <img src="/batik.png" alt="Batik" class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12" />
-      <img src="/batik.png" alt="Batik" class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12" />
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12"
+      >
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12"
+      >
     </div>
 
     <!-- ============ SIDEBAR ============ -->
@@ -32,8 +39,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/dashboard' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideLayoutDashboard :size="18" :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideLayoutDashboard
+            :size="18"
+            :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Dashboard</span>
         </NuxtLink>
 
@@ -44,8 +57,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/surat-masuk' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/surat-masuk' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideMailOpen :size="18" :class="$route.path === '/surat-masuk' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/surat-masuk' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideMailOpen
+            :size="18"
+            :class="$route.path === '/surat-masuk' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Surat Masuk</span>
         </NuxtLink>
 
@@ -54,8 +73,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/surat-keluar' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/surat-keluar' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideSend :size="18" :class="$route.path === '/surat-keluar' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/surat-keluar' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideSend
+            :size="18"
+            :class="$route.path === '/surat-keluar' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Surat Keluar</span>
         </NuxtLink>
 
@@ -66,8 +91,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/karyawan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/karyawan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideUsers :size="18" :class="$route.path === '/karyawan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/karyawan' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideUsers
+            :size="18"
+            :class="$route.path === '/karyawan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Karyawan</span>
         </NuxtLink>
 
@@ -76,8 +107,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/kelola-permohonan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/kelola-permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideFileSignature :size="18" :class="$route.path === '/kelola-permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/kelola-permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideFileSignature
+            :size="18"
+            :class="$route.path === '/kelola-permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Permohonan</span>
         </NuxtLink>
       </nav>
@@ -101,7 +138,10 @@
             title="Keluar"
             @click="authStore.logout()"
           >
-            <LucideLogOut :size="18" class="group-hover:-translate-x-0.5 transition-transform" />
+            <LucideLogOut
+              :size="18"
+              class="group-hover:-translate-x-0.5 transition-transform"
+            />
           </button>
         </div>
       </div>
@@ -134,7 +174,7 @@
             Tinjau dan proses pengajuan izin, cuti, atau sakit dari karyawan
           </p>
         </div>
-        
+
         <!-- Animated Badge for Page -->
         <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-osn-500/10 border border-osn-500/20 text-osn-400">
           <LucideFileSignature :size="14" />
@@ -144,7 +184,6 @@
 
       <!-- Konten Halaman -->
       <main class="flex flex-col gap-6 p-6 max-w-[1600px] w-full mx-auto">
-        
         <!-- Tabel Permohonan -->
         <div class="relative overflow-hidden bg-[#0d1c33]/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl shadow-lg flex-1">
           <!-- Background abstract glow -->
@@ -164,17 +203,29 @@
                 Total: <span class="text-osn-400 ml-1.5">{{ daftarPermohonan.length }}</span> Pengajuan
               </div>
             </div>
-            
+
             <div class="overflow-x-auto">
               <table class="w-full text-sm text-left">
                 <thead class="bg-black/10 text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-700/50">
                   <tr>
-                    <th class="px-6 py-4 w-16 text-center">No</th>
-                    <th class="px-6 py-4 whitespace-nowrap min-w-[200px]">Karyawan</th>
-                    <th class="px-6 py-4 whitespace-nowrap">Jenis</th>
-                    <th class="px-6 py-4 whitespace-nowrap">Waktu</th>
-                    <th class="px-6 py-4 whitespace-nowrap">Status</th>
-                    <th class="px-6 py-4 text-center whitespace-nowrap">Aksi</th>
+                    <th class="px-6 py-4 w-16 text-center">
+                      No
+                    </th>
+                    <th class="px-6 py-4 whitespace-nowrap min-w-[200px]">
+                      Karyawan
+                    </th>
+                    <th class="px-6 py-4 whitespace-nowrap">
+                      Jenis
+                    </th>
+                    <th class="px-6 py-4 whitespace-nowrap">
+                      Waktu
+                    </th>
+                    <th class="px-6 py-4 whitespace-nowrap">
+                      Status
+                    </th>
+                    <th class="px-6 py-4 text-center whitespace-nowrap">
+                      Aksi
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-700/50">
@@ -186,7 +237,10 @@
                       class="px-6 py-16 text-center text-slate-400"
                     >
                       <div class="flex flex-col items-center justify-center gap-3">
-                        <LucideLoader :size="28" class="animate-spin text-osn-400" />
+                        <LucideLoader
+                          :size="28"
+                          class="animate-spin text-osn-400"
+                        />
                         <span class="font-medium tracking-wide">Memuat data permohonan...</span>
                       </div>
                     </td>
@@ -199,7 +253,10 @@
                       class="px-6 py-16 text-center text-slate-400"
                     >
                       <div class="flex flex-col items-center justify-center gap-3 opacity-60">
-                        <LucideInbox :size="48" class="text-slate-500" />
+                        <LucideInbox
+                          :size="48"
+                          class="text-slate-500"
+                        />
                         <span class="font-medium tracking-wide">Belum ada pengajuan permohonan.</span>
                       </div>
                     </td>
@@ -229,7 +286,10 @@
                         class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest border"
                         :class="badgeJenis(p.jenisOpsi)"
                       >
-                        <component :is="iconJenis(p.jenisOpsi)" :size="12" />
+                        <component
+                          :is="iconJenis(p.jenisOpsi)"
+                          :size="12"
+                        />
                         {{ p.jenisOpsi }}
                       </span>
                     </td>
@@ -273,10 +333,16 @@
       leave-active-class="transition duration-200 ease-in"
       leave-to-class="opacity-0"
     >
-      <div v-if="permohonanTerpilih" class="fixed inset-0 z-[60] flex items-center justify-center p-4">
+      <div
+        v-if="permohonanTerpilih"
+        class="fixed inset-0 z-[60] flex items-center justify-center p-4"
+      >
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="tutupDetail" />
-        
+        <div
+          class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          @click="tutupDetail"
+        />
+
         <!-- Modal Content -->
         <Transition
           enter-active-class="transition duration-300 ease-out delay-75"
@@ -284,7 +350,10 @@
           leave-active-class="transition duration-200 ease-in"
           leave-to-class="opacity-0 scale-95 translate-y-4"
         >
-          <div v-if="permohonanTerpilih" class="relative w-full max-w-lg bg-[#0a1628] border border-slate-700/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+          <div
+            v-if="permohonanTerpilih"
+            class="relative w-full max-w-lg bg-[#0a1628] border border-slate-700/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+          >
             <!-- Header -->
             <div class="px-6 py-5 border-b border-slate-700/50 bg-[#0d1c33]/50 flex items-center justify-between">
               <h3 class="text-lg font-bold text-white flex items-center gap-3">
@@ -293,11 +362,14 @@
                 </div>
                 Tinjau Permohonan <span class="text-slate-400 ml-1 font-mono">#{{ permohonanTerpilih.id }}</span>
               </h3>
-              <button @click="tutupDetail" class="p-2 rounded-xl text-slate-400 hover:bg-slate-700/50 hover:text-white transition">
+              <button
+                class="p-2 rounded-xl text-slate-400 hover:bg-slate-700/50 hover:text-white transition"
+                @click="tutupDetail"
+              >
                 <LucideX :size="20" />
               </button>
             </div>
-            
+
             <!-- Body -->
             <div class="p-6 flex flex-col gap-6">
               <!-- Info Pengaju -->
@@ -306,36 +378,60 @@
                   {{ (permohonanTerpilih.pengguna?.namaLengkap || '?').slice(0, 2).toUpperCase() }}
                 </div>
                 <div>
-                  <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Diajukan Oleh</p>
-                  <p class="text-sm font-bold text-slate-200">{{ permohonanTerpilih.pengguna?.namaLengkap }}</p>
-                  <p class="text-xs font-mono text-slate-500">@{{ permohonanTerpilih.pengguna?.username }}</p>
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Diajukan Oleh
+                  </p>
+                  <p class="text-sm font-bold text-slate-200">
+                    {{ permohonanTerpilih.pengguna?.namaLengkap }}
+                  </p>
+                  <p class="text-xs font-mono text-slate-500">
+                    @{{ permohonanTerpilih.pengguna?.username }}
+                  </p>
                 </div>
               </div>
 
               <div class="flex items-center gap-4">
-                <div class="p-3 rounded-2xl border" :class="badgeJenis(permohonanTerpilih.jenisOpsi)">
-                  <component :is="iconJenis(permohonanTerpilih.jenisOpsi)" :size="24" />
+                <div
+                  class="p-3 rounded-2xl border"
+                  :class="badgeJenis(permohonanTerpilih.jenisOpsi)"
+                >
+                  <component
+                    :is="iconJenis(permohonanTerpilih.jenisOpsi)"
+                    :size="24"
+                  />
                 </div>
                 <div>
-                  <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Jenis Permohonan</p>
-                  <p class="text-base font-bold text-slate-200 uppercase tracking-widest">{{ permohonanTerpilih.jenisOpsi }}</p>
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Jenis Permohonan
+                  </p>
+                  <p class="text-base font-bold text-slate-200 uppercase tracking-widest">
+                    {{ permohonanTerpilih.jenisOpsi }}
+                  </p>
                 </div>
               </div>
-              
+
               <div class="grid grid-cols-2 gap-4">
                 <div class="p-4 bg-black/20 rounded-2xl border border-slate-700/30">
                   <div class="flex items-center gap-1.5 text-slate-500 mb-2">
                     <LucideCalendarDays :size="14" />
-                    <p class="text-[10px] font-bold uppercase tracking-wider">Tanggal Mulai</p>
+                    <p class="text-[10px] font-bold uppercase tracking-wider">
+                      Tanggal Mulai
+                    </p>
                   </div>
-                  <p class="text-sm font-semibold text-slate-200">{{ formatTanggal(permohonanTerpilih.tanggalMulai) }}</p>
+                  <p class="text-sm font-semibold text-slate-200">
+                    {{ formatTanggal(permohonanTerpilih.tanggalMulai) }}
+                  </p>
                 </div>
                 <div class="p-4 bg-black/20 rounded-2xl border border-slate-700/30">
                   <div class="flex items-center gap-1.5 text-slate-500 mb-2">
                     <LucideCalendarDays :size="14" />
-                    <p class="text-[10px] font-bold uppercase tracking-wider">Tanggal Selesai</p>
+                    <p class="text-[10px] font-bold uppercase tracking-wider">
+                      Tanggal Selesai
+                    </p>
                   </div>
-                  <p class="text-sm font-semibold text-slate-200">{{ formatTanggal(permohonanTerpilih.tanggalSelesai) }}</p>
+                  <p class="text-sm font-semibold text-slate-200">
+                    {{ formatTanggal(permohonanTerpilih.tanggalSelesai) }}
+                  </p>
                 </div>
               </div>
 
@@ -349,7 +445,9 @@
               </div>
 
               <div class="flex items-center justify-between p-4 bg-black/20 rounded-2xl border border-slate-700/30">
-                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Status Saat Ini</p>
+                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                  Status Saat Ini
+                </p>
                 <span
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest border"
                   :class="badgeStatus(permohonanTerpilih.status)"
@@ -358,30 +456,41 @@
                 </span>
               </div>
             </div>
-            
+
             <!-- Footer Actions -->
             <div class="px-6 py-5 border-t border-slate-700/50 bg-[#0d1c33]/30">
-              <div v-if="permohonanTerpilih.status === 'pending'" class="grid grid-cols-2 gap-4">
+              <div
+                v-if="permohonanTerpilih.status === 'pending'"
+                class="grid grid-cols-2 gap-4"
+              >
                 <button
-                  @click="updateStatus(permohonanTerpilih.id, 'ditolak')"
                   class="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-sm font-bold tracking-wide transition"
                   :disabled="sedangProses"
+                  @click="updateStatus(permohonanTerpilih.id, 'ditolak')"
                 >
                   <LucideXCircle :size="18" />
                   Tolak
                 </button>
                 <button
-                  @click="updateStatus(permohonanTerpilih.id, 'disetujui')"
                   class="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-sm font-bold tracking-wide transition shadow-lg shadow-emerald-500/10"
                   :disabled="sedangProses"
+                  @click="updateStatus(permohonanTerpilih.id, 'disetujui')"
                 >
                   <LucideCheckCircle2 :size="18" />
                   Setujui
                 </button>
               </div>
-              <div v-else class="flex flex-col gap-3">
-                <p class="text-xs text-center text-slate-400 font-medium">Permohonan ini telah diproses dan tidak dapat diubah lagi.</p>
-                <button @click="tutupDetail" class="w-full px-6 py-3 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 text-white text-sm font-bold tracking-wide transition">
+              <div
+                v-else
+                class="flex flex-col gap-3"
+              >
+                <p class="text-xs text-center text-slate-400 font-medium">
+                  Permohonan ini telah diproses dan tidak dapat diubah lagi.
+                </p>
+                <button
+                  class="w-full px-6 py-3 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 text-white text-sm font-bold tracking-wide transition"
+                  @click="tutupDetail"
+                >
                   Tutup Jendela
                 </button>
               </div>
@@ -413,7 +522,7 @@ function formatTanggal(val: string) {
   return new Date(val).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
-function formatTanggalLengkap(val: string) {
+function _formatTanggalLengkap(val: string) {
   return new Date(val).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })
 }
 
@@ -482,9 +591,9 @@ async function updateStatus(id: number, statusBaru: string) {
     await $fetch(`/api/permohonan/${id}`, {
       method: 'PUT',
       headers: { Authorization: `Bearer ${authStore.token}` },
-      body: { status: statusBaru }
+      body: { status: statusBaru },
     })
-    
+
     Swal.fire({
       title: 'Berhasil!',
       text: `Permohonan telah ${statusBaru}.`,
@@ -492,12 +601,13 @@ async function updateStatus(id: number, statusBaru: string) {
       background: '#0d1c33',
       color: '#fff',
       timer: 2000,
-      showConfirmButton: false
+      showConfirmButton: false,
     })
-    
+
     tutupDetail()
     await fetchData()
-  } catch (err) {
+  }
+  catch {
     Swal.fire({
       title: 'Gagal!',
       text: 'Terjadi kesalahan saat mengupdate status.',
@@ -505,7 +615,8 @@ async function updateStatus(id: number, statusBaru: string) {
       background: '#0d1c33',
       color: '#fff',
     })
-  } finally {
+  }
+  finally {
     sedangProses.value = false
   }
 }

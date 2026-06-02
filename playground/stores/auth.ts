@@ -45,8 +45,10 @@ export const useAuthStore = defineStore('auth', {
           sameSite: 'lax',
         })
         tokenCookie.value = this.token
-      } catch (err: any) {
-        throw new Error(err.data?.statusMessage || 'Login gagal.')
+      }
+      catch (err: unknown) {
+        const fetchErr = err as { data?: { statusMessage?: string } }
+        throw new Error(fetchErr.data?.statusMessage || 'Login gagal.')
       }
     },
 
@@ -58,7 +60,8 @@ export const useAuthStore = defineStore('auth', {
           headers: { Authorization: `Bearer ${this.token}` },
         })
         this.pengguna = result.data.pengguna
-      } catch {
+      }
+      catch {
         this.logout()
       }
     },

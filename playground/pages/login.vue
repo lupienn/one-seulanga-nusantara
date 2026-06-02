@@ -1,42 +1,56 @@
 <template>
   <div class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#040812] via-[#0a1628] to-[#050b14] overflow-hidden px-4 py-12">
-    
     <!-- Decorative Batik Top Left -->
     <div class="absolute -top-32 -left-32 w-[500px] h-[500px] pointer-events-none select-none animate-float-slow">
-      <img src="/batik.png" alt="Batik Decoration" class="w-full h-full object-contain opacity-[0.06] invert" />
+      <img
+        src="/batik.png"
+        alt="Batik Decoration"
+        class="w-full h-full object-contain opacity-[0.06] invert"
+      >
       <div class="absolute inset-0 bg-osn-500/20 blur-[120px] rounded-full mix-blend-screen" />
     </div>
 
     <!-- Decorative Batik Bottom Right -->
     <div class="absolute -bottom-32 -right-32 w-[500px] h-[500px] pointer-events-none select-none animate-float">
-      <img src="/batik.png" alt="Batik Decoration" class="w-full h-full object-contain opacity-[0.06] invert -rotate-180" />
+      <img
+        src="/batik.png"
+        alt="Batik Decoration"
+        class="w-full h-full object-contain opacity-[0.06] invert -rotate-180"
+      >
       <div class="absolute inset-0 bg-seulanga-500/20 blur-[120px] rounded-full mix-blend-screen" />
     </div>
 
     <!-- Decorative Seulanga Top Right -->
     <div class="absolute -top-12 -right-12 w-[320px] h-[320px] opacity-90 pointer-events-none select-none animate-float-slow z-0">
-      <img src="/seulanga.png" alt="Seulanga Decoration" class="w-full h-full object-contain rotate-12 drop-shadow-2xl" />
+      <img
+        src="/seulanga.png"
+        alt="Seulanga Decoration"
+        class="w-full h-full object-contain rotate-12 drop-shadow-2xl"
+      >
     </div>
 
     <!-- Card Container -->
     <div class="relative z-10 w-full max-w-[420px]">
       <!-- Card -->
       <div class="relative bg-[#0d1c33]/70 backdrop-blur-2xl border border-slate-700/50 rounded-3xl p-8 lg:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden">
-        
         <!-- Subtle inner highlight for glassmorphism -->
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <!-- Logo & Header -->
         <div class="flex flex-col items-center text-center mb-8">
           <div class="h-24 w-auto min-w-[150px] px-5 bg-white rounded-2xl shadow-[0_10px_30px_rgba(255,255,255,0.1)] flex items-center justify-center mb-6 border border-white/20 transform hover:scale-105 transition-transform duration-300">
-            <img 
-              src="/osnlogo.jpeg" 
-              alt="Logo OSN" 
+            <img
+              src="/osnlogo.jpeg"
+              alt="Logo OSN"
               class="h-16 w-auto object-contain"
-            />
+            >
           </div>
-          <h1 class="text-2xl font-bold text-white tracking-tight">One Seulanga Nusantara</h1>
-          <p class="text-sm text-slate-400 mt-1.5">Sistem Informasi Perusahaan</p>
+          <h1 class="text-2xl font-bold text-white tracking-tight">
+            One Seulanga Nusantara
+          </h1>
+          <p class="text-sm text-slate-400 mt-1.5">
+            Sistem Informasi Perusahaan
+          </p>
         </div>
 
         <!-- Form -->
@@ -155,9 +169,12 @@
           >
             <!-- Button shine effect -->
             <div class="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
-            
+
             <template v-if="!sedangMemuat">
-              <LucideLogIn :size="18" class="relative z-10" />
+              <LucideLogIn
+                :size="18"
+                class="relative z-10"
+              />
               <span class="relative z-10">Masuk Ke Sistem</span>
             </template>
             <template v-else>
@@ -173,7 +190,7 @@
 
       <!-- Footer -->
       <p class="text-center text-sm text-slate-500 font-medium mt-8">
-        &copy; {{ tahunSekarang }} One Seulanga Nusantara.<br/>Hak cipta dilindungi.
+        &copy; {{ tahunSekarang }} One Seulanga Nusantara.<br>Hak cipta dilindungi.
       </p>
     </div>
   </div>

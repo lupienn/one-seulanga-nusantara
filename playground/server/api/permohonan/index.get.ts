@@ -25,14 +25,15 @@ export default defineEventHandler(async (event) => {
         pengguna: {
           namaLengkap: users.namaLengkap,
           username: users.username,
-        }
+        },
       })
       .from(permohonanKaryawan)
       .leftJoin(users, eq(permohonanKaryawan.userId, users.id))
       .orderBy(desc(permohonanKaryawan.id))
-    
+
     data = result
-  } else {
+  }
+  else {
     // Karyawan hanya bisa melihat permohonan miliknya sendiri
     data = await db
       .select()

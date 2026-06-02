@@ -1,10 +1,17 @@
 <template>
   <div class="flex min-h-screen bg-gradient-to-br from-[#040812] via-[#0a1628] to-[#050b14] selection:bg-osn-500/30 font-sans">
-    
     <!-- Background Batik (Subtle Watermark Global) -->
     <div class="fixed inset-0 z-0 pointer-events-none select-none overflow-hidden">
-      <img src="/batik.png" alt="Batik" class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12" />
-      <img src="/batik.png" alt="Batik" class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12" />
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12"
+      >
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12"
+      >
     </div>
 
     <!-- SIDEBAR -->
@@ -32,8 +39,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/dashboard' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideLayoutDashboard :size="18" :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideLayoutDashboard
+            :size="18"
+            :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Dashboard</span>
         </NuxtLink>
 
@@ -44,8 +57,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/permohonan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideFileEdit :size="18" :class="$route.path === '/permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideFileEdit
+            :size="18"
+            :class="$route.path === '/permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Buat Permohonan</span>
         </NuxtLink>
 
@@ -54,8 +73,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/riwayat' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/riwayat' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideHistory :size="18" :class="$route.path === '/riwayat' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/riwayat' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideHistory
+            :size="18"
+            :class="$route.path === '/riwayat' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Riwayat Permohonan</span>
         </NuxtLink>
       </nav>
@@ -79,7 +104,10 @@
             title="Keluar"
             @click="authStore.logout()"
           >
-            <LucideLogOut :size="18" class="group-hover:-translate-x-0.5 transition-transform" />
+            <LucideLogOut
+              :size="18"
+              class="group-hover:-translate-x-0.5 transition-transform"
+            />
           </button>
         </div>
       </div>
@@ -112,7 +140,7 @@
             Lihat riwayat permohonan yang pernah diajukan
           </p>
         </div>
-        
+
         <!-- Animated Badge for Page -->
         <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-osn-500/10 border border-osn-500/20 text-osn-400">
           <LucideHistory :size="14" />
@@ -122,14 +150,18 @@
 
       <!-- Konten Halaman -->
       <main class="flex flex-col gap-6 p-6 max-w-[1600px] w-full mx-auto">
-        
         <!-- Loading State -->
         <div
           v-if="sedangMuat"
           class="relative overflow-hidden bg-[#0d1c33]/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-16 shadow-lg flex flex-col items-center justify-center"
         >
-          <LucideLoader :size="32" class="animate-spin text-osn-400 mb-4" />
-          <p class="font-medium text-slate-300 tracking-wide">Memuat riwayat permohonan...</p>
+          <LucideLoader
+            :size="32"
+            class="animate-spin text-osn-400 mb-4"
+          />
+          <p class="font-medium text-slate-300 tracking-wide">
+            Memuat riwayat permohonan...
+          </p>
         </div>
 
         <!-- Empty State -->
@@ -138,9 +170,16 @@
           class="relative overflow-hidden bg-[#0d1c33]/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-16 shadow-lg flex flex-col items-center justify-center text-center group"
         >
           <div class="absolute top-0 right-0 p-32 bg-slate-500/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-slate-500/10 transition-colors duration-700" />
-          <LucideInbox :size="48" class="text-slate-500 mb-4" />
-          <h3 class="text-lg font-bold text-slate-200 mb-1">Belum ada riwayat permohonan</h3>
-          <p class="text-sm text-slate-400 font-medium">Silakan buat permohonan baru melalui menu "Buat Permohonan".</p>
+          <LucideInbox
+            :size="48"
+            class="text-slate-500 mb-4"
+          />
+          <h3 class="text-lg font-bold text-slate-200 mb-1">
+            Belum ada riwayat permohonan
+          </h3>
+          <p class="text-sm text-slate-400 font-medium">
+            Silakan buat permohonan baru melalui menu "Buat Permohonan".
+          </p>
         </div>
 
         <!-- Tabel Riwayat Permohonan -->
@@ -161,18 +200,32 @@
               Total: <span class="text-osn-400 ml-1.5">{{ daftarPermohonan.length }}</span> Riwayat
             </div>
           </div>
-          
+
           <div class="overflow-x-auto">
             <table class="w-full text-sm text-left">
               <thead class="bg-black/10 text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-700/50">
                 <tr>
-                  <th class="px-6 py-4 w-20 text-center">No. ID</th>
-                  <th class="px-6 py-4 whitespace-nowrap">Jenis</th>
-                  <th class="px-6 py-4 whitespace-nowrap">Tanggal Mulai</th>
-                  <th class="px-6 py-4 whitespace-nowrap">Tanggal Selesai</th>
-                  <th class="px-6 py-4 whitespace-nowrap">Status</th>
-                  <th class="px-6 py-4 whitespace-nowrap">Diajukan</th>
-                  <th class="px-6 py-4 text-center whitespace-nowrap">Aksi</th>
+                  <th class="px-6 py-4 w-20 text-center">
+                    No. ID
+                  </th>
+                  <th class="px-6 py-4 whitespace-nowrap">
+                    Jenis
+                  </th>
+                  <th class="px-6 py-4 whitespace-nowrap">
+                    Tanggal Mulai
+                  </th>
+                  <th class="px-6 py-4 whitespace-nowrap">
+                    Tanggal Selesai
+                  </th>
+                  <th class="px-6 py-4 whitespace-nowrap">
+                    Status
+                  </th>
+                  <th class="px-6 py-4 whitespace-nowrap">
+                    Diajukan
+                  </th>
+                  <th class="px-6 py-4 text-center whitespace-nowrap">
+                    Aksi
+                  </th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-700/50">
@@ -189,19 +242,28 @@
                       class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest border"
                       :class="badgeJenis(item.jenisOpsi)"
                     >
-                      <component :is="iconJenis(item.jenisOpsi)" :size="12" />
+                      <component
+                        :is="iconJenis(item.jenisOpsi)"
+                        :size="12"
+                      />
                       {{ item.jenisOpsi }}
                     </span>
                   </td>
                   <td class="px-6 py-4 text-slate-300 whitespace-nowrap">
                     <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/50 border border-slate-700/50 text-xs font-semibold">
-                      <LucideCalendarDays :size="12" class="text-osn-400" />
+                      <LucideCalendarDays
+                        :size="12"
+                        class="text-osn-400"
+                      />
                       {{ formatTanggal(item.tanggalMulai) }}
                     </div>
                   </td>
                   <td class="px-6 py-4 text-slate-300 whitespace-nowrap">
                     <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/50 border border-slate-700/50 text-xs font-semibold">
-                      <LucideCalendarDays :size="12" class="text-osn-400" />
+                      <LucideCalendarDays
+                        :size="12"
+                        class="text-osn-400"
+                      />
                       {{ formatTanggal(item.tanggalSelesai) }}
                     </div>
                   </td>
@@ -231,10 +293,9 @@
             </table>
           </div>
         </div>
-
       </main>
     </div>
-    
+
     <!-- Modal Detail -->
     <Transition
       enter-active-class="transition duration-300 ease-out"
@@ -242,10 +303,16 @@
       leave-active-class="transition duration-200 ease-in"
       leave-to-class="opacity-0"
     >
-      <div v-if="permohonanTerpilih" class="fixed inset-0 z-[60] flex items-center justify-center p-4">
+      <div
+        v-if="permohonanTerpilih"
+        class="fixed inset-0 z-[60] flex items-center justify-center p-4"
+      >
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="tutupDetail" />
-        
+        <div
+          class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          @click="tutupDetail"
+        />
+
         <!-- Modal Content -->
         <Transition
           enter-active-class="transition duration-300 ease-out delay-75"
@@ -253,7 +320,10 @@
           leave-active-class="transition duration-200 ease-in"
           leave-to-class="opacity-0 scale-95 translate-y-4"
         >
-          <div v-if="permohonanTerpilih" class="relative w-full max-w-lg bg-[#0a1628] border border-slate-700/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+          <div
+            v-if="permohonanTerpilih"
+            class="relative w-full max-w-lg bg-[#0a1628] border border-slate-700/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+          >
             <!-- Header -->
             <div class="px-6 py-5 border-b border-slate-700/50 bg-[#0d1c33]/50 flex items-center justify-between">
               <h3 class="text-lg font-bold text-white flex items-center gap-3">
@@ -262,37 +332,58 @@
                 </div>
                 Detail Permohonan <span class="text-slate-400 ml-1 font-mono">#{{ permohonanTerpilih.id }}</span>
               </h3>
-              <button @click="tutupDetail" class="p-2 rounded-xl text-slate-400 hover:bg-slate-700/50 hover:text-white transition">
+              <button
+                class="p-2 rounded-xl text-slate-400 hover:bg-slate-700/50 hover:text-white transition"
+                @click="tutupDetail"
+              >
                 <LucideX :size="20" />
               </button>
             </div>
-            
+
             <!-- Body -->
             <div class="p-6 flex flex-col gap-6">
               <div class="flex items-center gap-4">
-                <div class="p-3 rounded-2xl border" :class="badgeJenis(permohonanTerpilih.jenisOpsi)">
-                  <component :is="iconJenis(permohonanTerpilih.jenisOpsi)" :size="24" />
+                <div
+                  class="p-3 rounded-2xl border"
+                  :class="badgeJenis(permohonanTerpilih.jenisOpsi)"
+                >
+                  <component
+                    :is="iconJenis(permohonanTerpilih.jenisOpsi)"
+                    :size="24"
+                  />
                 </div>
                 <div>
-                  <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Jenis Permohonan</p>
-                  <p class="text-base font-bold text-slate-200 uppercase tracking-widest">{{ permohonanTerpilih.jenisOpsi }}</p>
+                  <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Jenis Permohonan
+                  </p>
+                  <p class="text-base font-bold text-slate-200 uppercase tracking-widest">
+                    {{ permohonanTerpilih.jenisOpsi }}
+                  </p>
                 </div>
               </div>
-              
+
               <div class="grid grid-cols-2 gap-4">
                 <div class="p-4 bg-black/20 rounded-2xl border border-slate-700/30">
                   <div class="flex items-center gap-1.5 text-slate-500 mb-2">
                     <LucideCalendarDays :size="14" />
-                    <p class="text-[10px] font-bold uppercase tracking-wider">Tanggal Mulai</p>
+                    <p class="text-[10px] font-bold uppercase tracking-wider">
+                      Tanggal Mulai
+                    </p>
                   </div>
-                  <p class="text-sm font-semibold text-slate-200">{{ formatTanggal(permohonanTerpilih.tanggalMulai) }}</p>
+                  <p class="text-sm font-semibold text-slate-200">
+                    {{ formatTanggal(permohonanTerpilih.tanggalMulai) }}
+                  </p>
                 </div>
                 <div class="p-4 bg-black/20 rounded-2xl border border-slate-700/30">
                   <div class="flex items-center gap-1.5 text-slate-500 mb-2">
                     <LucideCalendarDays :size="14" />
-                    <p class="text-[10px] font-bold uppercase tracking-wider">Tanggal Selesai</p>
+                    <p class="text-[10px] font-bold uppercase tracking-wider">
+                      Tanggal Selesai
+                    </p>
                   </div>
-                  <p class="text-sm font-semibold text-slate-200">{{ formatTanggal(permohonanTerpilih.tanggalSelesai) }}</p>
+                  <p class="text-sm font-semibold text-slate-200">
+                    {{ formatTanggal(permohonanTerpilih.tanggalSelesai) }}
+                  </p>
                 </div>
               </div>
 
@@ -306,7 +397,9 @@
               </div>
 
               <div class="flex items-center justify-between p-4 bg-black/20 rounded-2xl border border-slate-700/30">
-                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Status Saat Ini</p>
+                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                  Status Saat Ini
+                </p>
                 <span
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest border"
                   :class="badgeStatus(permohonanTerpilih.status)"
@@ -315,14 +408,20 @@
                 </span>
               </div>
             </div>
-            
+
             <!-- Footer -->
             <div class="px-6 py-4 border-t border-slate-700/50 bg-[#0d1c33]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div class="flex items-center gap-2 text-xs font-medium text-slate-400">
-                <LucideClock :size="14" class="text-osn-400" />
+                <LucideClock
+                  :size="14"
+                  class="text-osn-400"
+                />
                 Diajukan pada: <span class="text-slate-300">{{ formatTanggalLengkap(permohonanTerpilih.createdAt) }}</span>
               </div>
-              <button @click="tutupDetail" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 text-white text-sm font-bold tracking-wide transition">
+              <button
+                class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 text-white text-sm font-bold tracking-wide transition"
+                @click="tutupDetail"
+              >
                 Tutup
               </button>
             </div>

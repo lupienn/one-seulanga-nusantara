@@ -1,10 +1,17 @@
 <template>
   <div class="flex min-h-screen bg-gradient-to-br from-[#040812] via-[#0a1628] to-[#050b14] selection:bg-osn-500/30 font-sans">
-    
     <!-- Background Batik (Subtle Watermark Global) -->
     <div class="fixed inset-0 z-0 pointer-events-none select-none overflow-hidden">
-      <img src="/batik.png" alt="Batik" class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12" />
-      <img src="/batik.png" alt="Batik" class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12" />
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -top-64 -right-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert rotate-12"
+      >
+      <img
+        src="/batik.png"
+        alt="Batik"
+        class="absolute -bottom-64 -left-64 w-[800px] h-[800px] object-contain opacity-[0.02] invert -rotate-12"
+      >
     </div>
 
     <!-- SIDEBAR -->
@@ -32,8 +39,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/dashboard' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideLayoutDashboard :size="18" :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/dashboard' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideLayoutDashboard
+            :size="18"
+            :class="$route.path === '/dashboard' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Dashboard</span>
         </NuxtLink>
 
@@ -44,8 +57,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/permohonan' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideFileEdit :size="18" :class="$route.path === '/permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/permohonan' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideFileEdit
+            :size="18"
+            :class="$route.path === '/permohonan' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Buat Permohonan</span>
         </NuxtLink>
 
@@ -54,8 +73,14 @@
           class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 group relative"
           :class="$route.path === '/riwayat' ? 'bg-osn-500/10 text-osn-400' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'"
         >
-          <div class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300" :class="$route.path === '/riwayat' ? 'opacity-100' : 'opacity-0 scale-y-0'"></div>
-          <LucideHistory :size="18" :class="$route.path === '/riwayat' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'" />
+          <div
+            class="absolute inset-y-0 left-0 w-1 rounded-r-full bg-osn-500 transition-all duration-300"
+            :class="$route.path === '/riwayat' ? 'opacity-100' : 'opacity-0 scale-y-0'"
+          />
+          <LucideHistory
+            :size="18"
+            :class="$route.path === '/riwayat' ? 'text-osn-400' : 'text-slate-500 group-hover:text-slate-300'"
+          />
           <span>Riwayat Permohonan</span>
         </NuxtLink>
       </nav>
@@ -79,7 +104,10 @@
             title="Keluar"
             @click="authStore.logout()"
           >
-            <LucideLogOut :size="18" class="group-hover:-translate-x-0.5 transition-transform" />
+            <LucideLogOut
+              :size="18"
+              class="group-hover:-translate-x-0.5 transition-transform"
+            />
           </button>
         </div>
       </div>
@@ -112,7 +140,7 @@
             Ajukan izin, sakit, atau cuti
           </p>
         </div>
-        
+
         <!-- Animated Badge for Page -->
         <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-osn-500/10 border border-osn-500/20 text-osn-400">
           <LucideFileEdit :size="14" />
@@ -126,7 +154,7 @@
         <div class="relative overflow-hidden bg-[#0d1c33]/60 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 lg:p-8 shadow-lg group">
           <!-- Background abstract glow -->
           <div class="absolute top-0 right-0 p-32 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-emerald-500/10 transition-colors duration-700" />
-          
+
           <div class="relative z-10">
             <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-3">
               <div class="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 shadow-inner">
@@ -174,7 +202,10 @@
                   <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Tanggal Mulai</label>
                   <div class="relative">
                     <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                      <LucideCalendarDays :size="16" class="text-slate-500" />
+                      <LucideCalendarDays
+                        :size="16"
+                        class="text-slate-500"
+                      />
                     </div>
                     <input
                       v-model="form.tanggalMulai"
@@ -190,12 +221,15 @@
                     <LucideAlertCircle :size="14" />{{ errorTanggalMulai }}
                   </span>
                 </div>
-                
+
                 <div class="flex flex-col gap-2">
                   <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Tanggal Selesai</label>
                   <div class="relative">
                     <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                      <LucideCalendarDays :size="16" class="text-slate-500" />
+                      <LucideCalendarDays
+                        :size="16"
+                        class="text-slate-500"
+                      />
                     </div>
                     <input
                       v-model="form.tanggalSelesai"
@@ -227,7 +261,10 @@
                     ? 'border-red-500/30 bg-red-500/10 text-red-300'
                     : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300'"
                 >
-                  <div class="p-1 rounded-full" :class="rentangHari > 3 ? 'bg-red-500/20 text-red-400' : 'bg-emerald-500/20 text-emerald-400'">
+                  <div
+                    class="p-1 rounded-full"
+                    :class="rentangHari > 3 ? 'bg-red-500/20 text-red-400' : 'bg-emerald-500/20 text-emerald-400'"
+                  >
                     <LucideCalendarDays :size="16" />
                   </div>
                   <span>
@@ -261,8 +298,15 @@
                   class="relative overflow-hidden w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   :disabled="sedangSimpan"
                 >
-                  <LucideLoader v-if="sedangSimpan" :size="18" class="animate-spin" />
-                  <LucideSendHorizonal v-else :size="18" />
+                  <LucideLoader
+                    v-if="sedangSimpan"
+                    :size="18"
+                    class="animate-spin"
+                  />
+                  <LucideSendHorizonal
+                    v-else
+                    :size="18"
+                  />
                   <span>{{ sedangSimpan ? 'Mengajukan...' : 'Ajukan Permohonan' }}</span>
                 </button>
               </div>
