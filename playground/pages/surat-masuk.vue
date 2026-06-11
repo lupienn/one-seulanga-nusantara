@@ -208,9 +208,17 @@
                 <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Tanggal</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                    <LucideCalendar :size="16" class="text-slate-500" />
+                    <LucideCalendar
+                      :size="16"
+                      class="text-slate-500"
+                    />
                   </div>
-                  <input v-model="form.tanggal" type="date" class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none [color-scheme:dark]" :disabled="sedangSimpan">
+                  <input
+                    v-model="form.tanggal"
+                    type="date"
+                    class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none [color-scheme:dark]"
+                    :disabled="sedangSimpan"
+                  >
                 </div>
               </div>
 
@@ -218,9 +226,18 @@
                 <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Nomor Surat</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                    <LucideHash :size="16" class="text-slate-500" />
+                    <LucideHash
+                      :size="16"
+                      class="text-slate-500"
+                    />
                   </div>
-                  <input v-model="form.noSurat" type="text" class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none" placeholder="Contoh: 001/OSN/V/2025" :disabled="sedangSimpan">
+                  <input
+                    v-model="form.noSurat"
+                    type="text"
+                    class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none"
+                    placeholder="Contoh: 001/OSN/V/2025"
+                    :disabled="sedangSimpan"
+                  >
                 </div>
               </div>
 
@@ -228,9 +245,18 @@
                 <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Pengirim</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                    <LucideBuilding2 :size="16" class="text-slate-500" />
+                    <LucideBuilding2
+                      :size="16"
+                      class="text-slate-500"
+                    />
                   </div>
-                  <input v-model="form.pengirim" type="text" class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none" placeholder="Instansi Pengirim" :disabled="sedangSimpan">
+                  <input
+                    v-model="form.pengirim"
+                    type="text"
+                    class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none"
+                    placeholder="Instansi Pengirim"
+                    :disabled="sedangSimpan"
+                  >
                 </div>
               </div>
 
@@ -238,9 +264,18 @@
                 <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Penerima</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                    <LucideBuilding2 :size="16" class="text-slate-500" />
+                    <LucideBuilding2
+                      :size="16"
+                      class="text-slate-500"
+                    />
                   </div>
-                  <input v-model="form.penerima" type="text" class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none" placeholder="Instansi Penerima" :disabled="sedangSimpan">
+                  <input
+                    v-model="form.penerima"
+                    type="text"
+                    class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none"
+                    placeholder="Instansi Penerima"
+                    :disabled="sedangSimpan"
+                  >
                 </div>
               </div>
 
@@ -248,9 +283,18 @@
                 <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Isi Surat</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                    <LucideMessageSquareText :size="16" class="text-slate-500" />
+                    <LucideMessageSquareText
+                      :size="16"
+                      class="text-slate-500"
+                    />
                   </div>
-                  <input v-model="form.isiSurat" type="text" class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none" placeholder="Perihal / isi surat" :disabled="sedangSimpan">
+                  <input
+                    v-model="form.isiSurat"
+                    type="text"
+                    class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none"
+                    placeholder="Perihal / isi surat"
+                    :disabled="sedangSimpan"
+                  >
                 </div>
               </div>
 
@@ -258,9 +302,18 @@
                 <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Ditanda Tangani Oleh</label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                    <LucideFileSignature :size="16" class="text-slate-500" />
+                    <LucideFileSignature
+                      :size="16"
+                      class="text-slate-500"
+                    />
                   </div>
-                  <input v-model="form.ditandaTanganiOleh" type="text" class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none" placeholder="Contoh: DIREKTUR UTAMA" :disabled="sedangSimpan">
+                  <input
+                    v-model="form.ditandaTanganiOleh"
+                    type="text"
+                    class="w-full pl-10 pr-4 py-3 text-sm bg-[#050a14]/50 border border-slate-700/60 text-white placeholder-slate-500 focus:bg-[#070f1e] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl transition-all outline-none"
+                    placeholder="Contoh: DIREKTUR UTAMA"
+                    :disabled="sedangSimpan"
+                  >
                 </div>
               </div>
 
@@ -270,8 +323,15 @@
                   class="relative overflow-hidden px-6 py-3 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   :disabled="sedangSimpan"
                 >
-                  <LucideLoader v-if="sedangSimpan" :size="18" class="animate-spin" />
-                  <LucideSave v-else :size="18" />
+                  <LucideLoader
+                    v-if="sedangSimpan"
+                    :size="18"
+                    class="animate-spin"
+                  />
+                  <LucideSave
+                    v-else
+                    :size="18"
+                  />
                   <span>{{ sedangSimpan ? 'Menyimpan...' : 'Simpan Surat Masuk' }}</span>
                 </button>
               </div>
@@ -326,61 +386,127 @@
             <table class="w-full text-sm text-left">
               <thead class="bg-black/10 text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-700/50">
                 <tr>
-                  <th class="px-4 py-4 w-12 text-center">No</th>
-                  <th class="px-4 py-4 whitespace-nowrap">Tanggal</th>
-                  <th class="px-4 py-4 whitespace-nowrap">No. Surat</th>
-                  <th class="px-4 py-4 whitespace-nowrap">Pengirim</th>
-                  <th class="px-4 py-4 whitespace-nowrap">Penerima</th>
-                  <th class="px-4 py-4 whitespace-nowrap min-w-[200px]">Isi Surat</th>
-                  <th class="px-4 py-4 whitespace-nowrap">Jenis Surat</th>
-                  <th class="px-4 py-4 whitespace-nowrap">User Pembuat</th>
-                  <th class="px-4 py-4 whitespace-nowrap">Ditanda Tangani</th>
-                  <th class="px-4 py-4 whitespace-nowrap">Approval Time</th>
-                  <th class="px-4 py-4 whitespace-nowrap text-center">Ket</th>
+                  <th class="px-4 py-4 w-12 text-center">
+                    No
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    Tanggal
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    No. Surat
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    Pengirim
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    Penerima
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap min-w-[200px]">
+                    Isi Surat
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    Jenis Surat
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    User Pembuat
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    Ditanda Tangani
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap">
+                    Approval Time
+                  </th>
+                  <th class="px-4 py-4 whitespace-nowrap text-center">
+                    Ket
+                  </th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-700/50">
                 <tr v-if="sedangMuat">
-                  <td colspan="11" class="px-6 py-16 text-center text-slate-400">
+                  <td
+                    colspan="11"
+                    class="px-6 py-16 text-center text-slate-400"
+                  >
                     <div class="flex flex-col items-center justify-center gap-3">
-                      <LucideLoader :size="28" class="animate-spin text-osn-400" />
+                      <LucideLoader
+                        :size="28"
+                        class="animate-spin text-osn-400"
+                      />
                       <span class="font-medium tracking-wide">Memuat data surat...</span>
                     </div>
                   </td>
                 </tr>
                 <tr v-else-if="daftarSurat.length === 0">
-                  <td colspan="11" class="px-6 py-16 text-center text-slate-400">
+                  <td
+                    colspan="11"
+                    class="px-6 py-16 text-center text-slate-400"
+                  >
                     <div class="flex flex-col items-center justify-center gap-3 opacity-60">
-                      <LucideInbox :size="48" class="text-slate-500" />
+                      <LucideInbox
+                        :size="48"
+                        class="text-slate-500"
+                      />
                       <span class="font-medium tracking-wide">Belum ada surat masuk.</span>
                     </div>
                   </td>
                 </tr>
-                <tr v-for="(surat, i) in daftarSurat" v-else :key="surat.id" class="hover:bg-white/5 transition-colors duration-200 group">
-                  <td class="px-4 py-4 text-center font-semibold text-slate-500 group-hover:text-slate-300">{{ i + 1 }}</td>
+                <tr
+                  v-for="(surat, i) in daftarSurat"
+                  v-else
+                  :key="surat.id"
+                  class="hover:bg-white/5 transition-colors duration-200 group"
+                >
+                  <td class="px-4 py-4 text-center font-semibold text-slate-500 group-hover:text-slate-300">
+                    {{ i + 1 }}
+                  </td>
                   <td class="px-4 py-4 text-slate-300 whitespace-nowrap text-xs">
                     <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/50 border border-slate-700/50 font-semibold">
-                      <LucideCalendarDays :size="12" class="text-osn-400" />
+                      <LucideCalendarDays
+                        :size="12"
+                        class="text-osn-400"
+                      />
                       {{ formatTanggal(surat.tanggal) }}
                     </div>
                   </td>
-                  <td class="px-4 py-4 font-bold text-slate-200 whitespace-nowrap">{{ surat.noSurat }}</td>
+                  <td class="px-4 py-4 font-bold text-slate-200 whitespace-nowrap">
+                    {{ surat.noSurat }}
+                  </td>
                   <td class="px-4 py-4 text-slate-300 font-medium">
                     <div class="flex items-center gap-2">
-                      <LucideBuilding2 :size="14" class="text-slate-500" />
+                      <LucideBuilding2
+                        :size="14"
+                        class="text-slate-500"
+                      />
                       {{ surat.pengirim }}
                     </div>
                   </td>
-                  <td class="px-4 py-4 text-slate-300 font-medium">{{ surat.penerima }}</td>
-                  <td class="px-4 py-4 text-slate-300 text-sm">{{ surat.isiSurat }}</td>
-                  <td class="px-4 py-4 whitespace-nowrap">
-                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">{{ surat.jenisSurat }}</span>
+                  <td class="px-4 py-4 text-slate-300 font-medium">
+                    {{ surat.penerima }}
                   </td>
-                  <td class="px-4 py-4 text-slate-300 whitespace-nowrap text-sm">{{ surat.userPembuat }}</td>
-                  <td class="px-4 py-4 text-slate-300 text-sm">{{ surat.ditandaTanganiOleh || '—' }}</td>
-                  <td class="px-4 py-4 text-slate-300 whitespace-nowrap text-xs">{{ surat.approvalTime ? formatTanggal(surat.approvalTime) : '—' }}</td>
+                  <td class="px-4 py-4 text-slate-300 text-sm">
+                    {{ surat.isiSurat }}
+                  </td>
+                  <td class="px-4 py-4 whitespace-nowrap">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">
+                      {{ surat.jenisSurat }}
+                    </span>
+                  </td>
+                  <td class="px-4 py-4 text-slate-300 whitespace-nowrap text-sm">
+                    {{ surat.userPembuat }}
+                  </td>
+                  <td class="px-4 py-4 text-slate-300 text-sm">
+                    {{ surat.ditandaTanganiOleh || '—' }}
+                  </td>
+                  <td class="px-4 py-4 text-slate-300 whitespace-nowrap text-xs">
+                    {{ surat.approvalTime ? formatTanggal(surat.approvalTime) : '—' }}
+                  </td>
                   <td class="px-4 py-4 text-center whitespace-nowrap">
-                    <span :class="surat.ket === 'DONE' ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' : 'bg-amber-500/15 text-amber-400 border-amber-500/30'" class="px-2.5 py-1 rounded-full text-xs font-bold border">{{ surat.ket || 'PENDING' }}</span>
+                    <span
+                      :class="surat.ket === 'DONE' ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' : 'bg-amber-500/15 text-amber-400 border-amber-500/30'"
+                      class="px-2.5 py-1 rounded-full text-xs font-bold border"
+                    >
+                      {{ surat.ket || 'PENDING' }}
+                    </span>
                   </td>
                 </tr>
               </tbody>
