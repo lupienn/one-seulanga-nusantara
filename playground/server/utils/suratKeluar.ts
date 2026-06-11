@@ -23,7 +23,7 @@ export async function generateNomorSuratKeluar(): Promise<string> {
   const result = await db
     .select({ count: sql<number>`COUNT(*)` })
     .from(suratKeluar)
-    .where(sql`YEAR(tanggal_kirim) = ${tahun}`)
+    .where(sql`YEAR(tanggal) = ${tahun}`)
 
   const counter = (result[0]?.count || 0) + 1
   const nomorUrut = String(counter).padStart(3, '0')
