@@ -1,4 +1,4 @@
-import { mysqlTable, varchar, int, timestamp, mysqlEnum, date, text } from 'drizzle-orm/mysql-core'
+import { mysqlTable, varchar, int, timestamp, mysqlEnum, date, text, datetime } from 'drizzle-orm/mysql-core'
 
 // ===== TABEL USERS =====
 export const users = mysqlTable('users', {
@@ -17,10 +17,16 @@ export type UserBaru = typeof users.$inferInsert
 // ===== TABEL SURAT MASUK =====
 export const suratMasuk = mysqlTable('surat_masuk', {
   id: int('id').primaryKey().autoincrement(),
+  tanggal: date('tanggal').notNull(),
   noSurat: varchar('no_surat', { length: 100 }).notNull(),
-  asalSurat: varchar('asal_surat', { length: 255 }).notNull(),
-  tanggalTerima: date('tanggal_terima').notNull(),
-  keterangan: text('keterangan'),
+  pengirim: varchar('pengirim', { length: 255 }).notNull(),
+  penerima: varchar('penerima', { length: 255 }).notNull(),
+  isiSurat: text('isi_surat').notNull(),
+  jenisSurat: varchar('jenis_surat', { length: 50 }).notNull().default('SURAT MASUK'),
+  userPembuat: varchar('user_pembuat', { length: 255 }).notNull(),
+  ditandaTanganiOleh: varchar('ditanda_tangani_oleh', { length: 255 }),
+  approvalTime: datetime('approval_time'),
+  ket: varchar('ket', { length: 50 }).default('DONE'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
 })
@@ -31,10 +37,16 @@ export type SuratMasukBaru = typeof suratMasuk.$inferInsert
 // ===== TABEL SURAT KELUAR =====
 export const suratKeluar = mysqlTable('surat_keluar', {
   id: int('id').primaryKey().autoincrement(),
+  tanggal: date('tanggal').notNull(),
   noSurat: varchar('no_surat', { length: 100 }).notNull().unique(),
-  tujuanSurat: varchar('tujuan_surat', { length: 255 }).notNull(),
-  tanggalKirim: date('tanggal_kirim').notNull(),
-  keterangan: text('keterangan'),
+  pengirim: varchar('pengirim', { length: 255 }).notNull(),
+  penerima: varchar('penerima', { length: 255 }).notNull(),
+  isiSurat: text('isi_surat').notNull(),
+  jenisSurat: varchar('jenis_surat', { length: 50 }).notNull().default('SURAT KELUAR'),
+  userPembuat: varchar('user_pembuat', { length: 255 }).notNull(),
+  ditandaTanganiOleh: varchar('ditanda_tangani_oleh', { length: 255 }),
+  approvalTime: datetime('approval_time'),
+  ket: varchar('ket', { length: 50 }).default('DONE'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
 })

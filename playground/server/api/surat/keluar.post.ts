@@ -10,10 +10,10 @@ export default defineEventHandler(async (event) => {
 
   const body = await readBody(event)
 
-  if (!body?.tujuanSurat || !body?.tanggalKirim) {
+  if (!body?.penerima || !body?.isiSurat || !body?.tanggal) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Tujuan Surat dan Tanggal Kirim wajib diisi.',
+      statusMessage: 'Tanggal, Penerima, dan Isi Surat wajib diisi.',
     })
   }
 
@@ -23,10 +23,16 @@ export default defineEventHandler(async (event) => {
   const noSurat = await generateNomorSuratKeluar()
 
   await db.insert(suratKeluar).values({
+    tanggal: body.tanggal,
     noSurat,
-    tujuanSurat: body.tujuanSurat,
-    tanggalKirim: body.tanggalKirim,
-    keterangan: body.keterangan || null,
+    pengirim: body.pengirim || 'PT. ONE SEULANGA NUSANTARA',
+    penerima: body.penerima,
+    isiSurat: body.isiSurat,
+    jenisSurat: body.jenisSurat || 'SURAT KELUAR',
+    userPembuat: userLogin.namaLengkap || userLogin.username,
+    ditandaTanganiOleh: body.ditandaTanganiOleh || null,
+    approvalTime: body.ditandaTanganiOleh ? new Date() : null,
+    ket: body.ditandaTanganiOleh ? 'DONE' : 'PENDING',
   })
 
   return {
