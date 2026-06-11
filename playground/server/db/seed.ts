@@ -38,68 +38,6 @@ async function seed() {
   })
 
   try {
-    // ===== BUAT TABEL USERS =====
-    console.log('📋 Membuat tabel users...')
-    await connection.execute(`
-      CREATE TABLE IF NOT EXISTS users (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        username VARCHAR(100) NOT NULL UNIQUE,
-        password VARCHAR(255) NOT NULL,
-        nama_lengkap VARCHAR(255) NOT NULL,
-        role ENUM('admin', 'karyawan') NOT NULL DEFAULT 'karyawan',
-        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-    `)
-    console.log('✅ Tabel users siap.\n')
-
-    // ===== BUAT TABEL SURAT MASUK =====
-    console.log('📋 Membuat tabel surat_masuk...')
-    await connection.execute(`
-      CREATE TABLE IF NOT EXISTS surat_masuk (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        no_surat VARCHAR(100) NOT NULL,
-        asal_surat VARCHAR(255) NOT NULL,
-        tanggal_terima DATE NOT NULL,
-        keterangan TEXT,
-        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-    `)
-    console.log('✅ Tabel surat_masuk siap.\n')
-
-    // ===== BUAT TABEL SURAT KELUAR =====
-    console.log('📋 Membuat tabel surat_keluar...')
-    await connection.execute(`
-      CREATE TABLE IF NOT EXISTS surat_keluar (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        no_surat VARCHAR(100) NOT NULL UNIQUE,
-        tujuan_surat VARCHAR(255) NOT NULL,
-        tanggal_kirim DATE NOT NULL,
-        keterangan TEXT,
-        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-    `)
-    console.log('✅ Tabel surat_keluar siap.\n')
-
-    // ===== BUAT TABEL PERMOHONAN KARYAWAN =====
-    console.log('📋 Membuat tabel permohonan_karyawan...')
-    await connection.execute(`
-      CREATE TABLE IF NOT EXISTS permohonan_karyawan (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        user_id INT NOT NULL,
-        jenis_opsi ENUM('izin', 'sakit', 'cuti') NOT NULL,
-        tanggal_mulai DATE NOT NULL,
-        tanggal_selesai DATE NOT NULL,
-        keterangan TEXT NOT NULL,
-        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-    `)
-    console.log('✅ Tabel permohonan_karyawan siap.\n')
-
     // ===== SEED DATA ADMIN =====
     const [adminRows] = await connection.execute(
       'SELECT id FROM users WHERE username = ? LIMIT 1',
